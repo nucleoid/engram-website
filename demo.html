@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Request a Demo — Engram</title>
+<meta name="description" content="Request a demo of Engram. Tailored installations on your infrastructure, in-person or remote setup."/>
+<meta name="theme-color" content="#0B0907"/>
+<meta name="robots" content="noindex"/>
+<link rel="icon" type="image/png" href="assets/logo-mark.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+
+<div class="page">
+  <div class="bg-atmos" aria-hidden="true"></div>
+  <div class="container">
+
+    <header>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="nav-logo" aria-label="Engram home">
+          <img src="assets/logo-mark.png" alt=""/>
+          <span>Engram</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#setup">Setup</a>
+          <a href="index.html#deployment">Deployment</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="form-page">
+      <span class="eyebrow">Get in touch</span>
+      <h1 style="margin-top:8px;">Request a demo</h1>
+      <p style="margin-top:16px;font-size:16px;">
+        Tell us a bit about your team and codebase. We'll reach out to schedule a tailored walkthrough — in-person or remote.
+      </p>
+
+      <form id="demo-form" novalidate>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required autocomplete="name"/>
+        </div>
+        <div class="field">
+          <label for="email">Work email</label>
+          <input id="email" name="email" type="email" required autocomplete="email"/>
+        </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" autocomplete="organization"/>
+        </div>
+        <div class="field">
+          <label for="repos">Repository setup</label>
+          <select id="repos" name="repos">
+            <option value="GitHub">GitHub</option>
+            <option value="Azure DevOps (Git)">Azure DevOps (Git)</option>
+            <option value="Azure DevOps (TFVC)">Azure DevOps (TFVC)</option>
+            <option value="Mixed">Mixed</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="notes">What are you trying to solve?</label>
+          <textarea id="notes" name="notes" placeholder="Codebase size, AI tools in use, anything that helps us prepare."></textarea>
+          <span class="field-hint">Optional — but the more you share, the better we can prepare.</span>
+        </div>
+
+        <div style="display:flex;gap:14px;align-items:center;margin-top:28px;flex-wrap:wrap;">
+          <button type="submit" class="btn btn-primary">Send request</button>
+          <a href="mailto:mitch@pragmaticcoder.com" class="btn btn-ghost">Email Mitch directly</a>
+        </div>
+
+        <p class="field-hint" style="margin-top:18px;">
+          Submitting opens your mail client with a pre-filled message to <a href="mailto:mitch@pragmaticcoder.com">mitch@pragmaticcoder.com</a>.
+          No data is sent to any server from this form.
+        </p>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Pragmatic Coder Ltd</span>
+      <span class="footer-spark" aria-hidden="true"></span>
+    </footer>
+  </div>
+</div>
+
+<script src="main.js" defer></script>
+<script>
+(function () {
+  var form = document.getElementById('demo-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = form.elements;
+    var subject = encodeURIComponent('Engram demo request — ' + (f.company.value || f.name.value || 'New lead'));
+    var body = encodeURIComponent(
+      'Name: ' + f.name.value + '\n' +
+      'Email: ' + f.email.value + '\n' +
+      'Company: ' + f.company.value + '\n' +
+      'Repos: ' + f.repos.value + '\n\n' +
+      'Notes:\n' + f.notes.value + '\n'
+    );
+    window.location.href = 'mailto:mitch@pragmaticcoder.com?subject=' + subject + '&body=' + body;
+  });
+})();
+</script>
+</body>
+</html>

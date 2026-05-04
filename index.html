@@ -1,474 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engram — Codebase Intelligence for AI Coding Tools</title>
-  <meta name="description" content="Index your repos. Search semantically. Give your AI assistant real context about your code.">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Engram — Ground truth for your AI coding tools</title>
+<meta name="description" content="Engram indexes your source code with deep semantic search, knowledge graphs, and cross-repo context — exposed to Claude Code, Cursor, and other AI coding tools via the MCP protocol."/>
+<meta name="theme-color" content="#0B0907"/>
+<link rel="canonical" href="https://engram.pragmaticcoder.com/"/>
+<link rel="icon" type="image/png" href="assets/logo-mark.png"/>
+<link rel="apple-touch-icon" href="assets/logo-mark.png"/>
 
-    :root {
-      --bg: #030712;
-      --bg-raised: #0f1117;
-      --bg-surface: #161922;
-      --text: #e5e7eb;
-      --text-secondary: #9ca3af;
-      --text-dim: #6b7280;
-      --accent: #6366f1;
-      --accent-light: #818cf8;
-      --border: #1f2937;
-      --mono: 'JetBrains Mono', monospace;
-      --sans: 'Inter', -apple-system, sans-serif;
-    }
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://engram.pragmaticcoder.com/"/>
+<meta property="og:title" content="Engram — Ground truth for your AI coding tools"/>
+<meta property="og:description" content="Deep semantic search, knowledge graphs, and cross-repo context for Claude Code, Cursor, and other AI coding tools — via MCP."/>
+<meta property="og:image" content="assets/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Engram — Ground truth for your AI coding tools"/>
+<meta name="twitter:description" content="Codebase intelligence for AI coding assistants. Native MCP server."/>
+<meta name="twitter:image" content="assets/og-image.png"/>
 
-    a { color: var(--accent-light); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
-    .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-    .wrap-wide { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+<link rel="stylesheet" href="styles.css"/>
 
-    /* ---- NAV ---- */
-    nav {
-      padding: 20px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-link:hover { text-decoration: none; }
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-    }
-    .wordmark {
-      font-family: var(--mono);
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.5px;
-    }
-    nav a.nav-link {
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--text-secondary);
-      transition: color 0.15s;
-    }
-    nav a.nav-link:hover { color: var(--text); text-decoration: none; }
-
-    /* ---- HERO ---- */
-    .hero {
-      padding: 80px 0 0;
-    }
-    .hero h1 {
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -1px;
-      margin-bottom: 20px;
-    }
-    .hero .lede {
-      font-size: 17px;
-      color: var(--text-secondary);
-      max-width: 520px;
-      margin-bottom: 36px;
-      line-height: 1.7;
-    }
-    .hero .cta-row {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      margin-bottom: 64px;
-    }
-    .btn-primary {
-      display: inline-block;
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 500;
-      padding: 12px 28px;
-      background: var(--accent);
-      color: #fff;
-      border-radius: 8px;
-      transition: background 0.15s;
-    }
-    .btn-primary:hover { background: #4f46e5; text-decoration: none; }
-    .btn-secondary {
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--text-dim);
-      transition: color 0.15s;
-    }
-    .btn-secondary:hover { color: var(--text-secondary); text-decoration: none; }
-
-    /* ---- TERMINAL ---- */
-    .terminal {
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 100px;
-    }
-    .terminal-bar {
-      display: flex;
-      gap: 7px;
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--border);
-    }
-    .terminal-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: #1f2937;
-    }
-    .terminal pre {
-      padding: 24px;
-      font-family: var(--mono);
-      font-size: 13px;
-      line-height: 1.7;
-      color: #9ca3af;
-      overflow-x: auto;
-    }
-    .terminal .comment { color: #4b5563; }
-    .terminal .cmd { color: #e5e7eb; }
-    .terminal .str { color: #a78bfa; }
-    .terminal .out { color: #6b7280; }
-    .terminal .hit { color: #6366f1; }
-    .terminal .val { color: #34d399; }
-
-    /* ---- DIVIDER ---- */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0;
-    }
-
-    /* ---- SECTION COMMON ---- */
-    .section-heading {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 32px;
-      letter-spacing: -0.5px;
-    }
-
-    /* ---- WHAT ---- */
-    .what { padding: 80px 0; }
-    .capabilities {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px 64px;
-    }
-    .cap h3 {
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent-light);
-      margin-bottom: 8px;
-    }
-    .cap p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* ---- HOW ---- */
-    .how { padding: 80px 0; }
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-    .step {
-      display: flex;
-      gap: 20px;
-      align-items: baseline;
-    }
-    .step-n {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--text-dim);
-      flex-shrink: 0;
-      width: 24px;
-    }
-    .step-body h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .step-body p {
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    /* ---- SUPPORTS ---- */
-    .supports { padding: 80px 0; }
-    .supports .sub {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-    }
-    .tag-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .tag {
-      font-family: var(--mono);
-      font-size: 12px;
-      padding: 7px 14px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      color: var(--text-secondary);
-      background: var(--bg-raised);
-    }
-
-    /* ---- PRICING ---- */
-    .pricing { padding: 80px 0; }
-    .pricing > .wrap > p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 32px;
-    }
-    .price-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .price-box {
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 28px;
-      background: var(--bg-raised);
-    }
-    .price-box h3 {
-      font-family: var(--mono);
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--accent-light);
-      margin-bottom: 6px;
-    }
-    .price-box .amount {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-    .price-box ul {
-      list-style: none;
-      margin: 0;
-    }
-    .price-box li {
-      font-size: 13px;
-      color: var(--text-secondary);
-      padding: 5px 0;
-    }
-    .price-box li::before {
-      content: "\2014  ";
-      color: var(--border);
-    }
-
-    /* ---- FOOTER ---- */
-    .footer {
-      padding: 48px 0;
-      text-align: center;
-    }
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      margin-bottom: 20px;
-    }
-    .footer-links a {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--text-dim);
-    }
-    .footer small {
-      font-size: 12px;
-      color: var(--text-dim);
-    }
-
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 640px) {
-      .capabilities { grid-template-columns: 1fr; gap: 32px; }
-      .price-row { grid-template-columns: 1fr; }
-      .hero { padding: 48px 0 0; }
-      .terminal pre { font-size: 11px; padding: 16px; }
-    }
-  </style>
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Engram",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Cross-platform",
+  "description": "Codebase intelligence platform that gives AI coding assistants deep semantic search, knowledge graphs, and cross-repo context via MCP.",
+  "url": "https://engram.pragmaticcoder.com/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pragmatic Coder Ltd",
+    "email": "mitch@pragmaticcoder.com"
+  },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder" }
+}
+</script>
 </head>
 <body>
 
-  <div class="wrap">
-    <nav>
-      <a href="/" class="logo-link">
-        <img src="images/favicon-64.png" alt="Engram" class="logo-icon">
-        <span class="wordmark">engram</span>
-      </a>
-      <a href="mailto:mitch@pragmaticcoder.com" class="nav-link">get access</a>
-    </nav>
+<a href="#main" class="skip">Skip to main content</a>
+
+<div class="page">
+  <div class="bg-atmos" aria-hidden="true"></div>
+
+  <div class="container">
+
+    <!-- ── Nav ─────────────────────────────────────────────────────── -->
+    <header>
+      <nav class="nav" aria-label="Primary">
+        <a href="/" class="nav-logo" aria-label="Engram home">
+          <img src="assets/logo-mark.png" alt=""/>
+          <span>Engram</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#features">Features</a>
+          <a href="#setup">Setup</a>
+          <a href="#deployment">Deployment</a>
+          <a href="demo.html" class="btn btn-primary" style="padding:8px 14px;font-size:11px;">Request demo</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+
+      <!-- ── Hero ──────────────────────────────────────────────────── -->
+      <section class="hero hero-stacked">
+        <figure class="hero-lockup reveal" aria-label="Engram — Codebase Intelligence Platform">
+          <img src="assets/logo-hero.png" alt="Engram — Codebase Intelligence Platform"/>
+        </figure>
+        <div class="hero-copy reveal">
+          <h1>Your AI coding tools are guessing about your codebase</h1>
+          <p class="hero-lede">Give them ground truth with Engram.</p>
+          <a class="btn btn-primary" href="demo.html">Contact us for demo</a>
+        </div>
+      </section>
+
+      <!-- ── Features ──────────────────────────────────────────────── -->
+      <section class="section" id="features" aria-labelledby="features-h">
+        <h2 id="features-h" class="section-h reveal">What it does</h2>
+        <div class="grid-2">
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <span class="tag">TS</span><span class="tag">PY</span><span class="tag">C#</span><span class="tag">JAVA</span><span class="tag">GO</span><span class="tag">SQL</span>
+            </div>
+            <h3>Deep Semantic Search</h3>
+            <p>Understand intent across languages with vector embeddings.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <svg viewBox="0 0 80 28" fill="none" width="80" height="28">
+                <circle cx="8" cy="14" r="4" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="32" cy="6" r="4" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="32" cy="22" r="4" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="56" cy="14" r="4" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="76" cy="6" r="3" stroke="currentColor" stroke-width="1.4"/>
+                <line x1="12" y1="14" x2="28" y2="6" stroke="rgba(217,119,87,0.5)"/>
+                <line x1="12" y1="14" x2="28" y2="22" stroke="rgba(217,119,87,0.5)"/>
+                <line x1="36" y1="6" x2="52" y2="14" stroke="rgba(217,119,87,0.5)"/>
+                <line x1="36" y1="22" x2="52" y2="14" stroke="rgba(217,119,87,0.5)"/>
+                <line x1="60" y1="14" x2="73" y2="6" stroke="rgba(217,119,87,0.5)"/>
+              </svg>
+            </div>
+            <h3>Codebase Knowledge Graph</h3>
+            <p>Connect commits, work items, and AST-parsed code into a single, queryable knowledge graph.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <span class="tag" style="border-color: var(--line-firm);">API contract</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-4-4 4 4-4 4"/></svg>
+              <span class="tag" style="border-color: var(--line-firm);">repo-a</span>
+              <span class="tag" style="border-color: var(--line-firm);">repo-b</span>
+            </div>
+            <h3>Cross-Repository Context</h3>
+            <p>Analyze dependencies and contracts across multiple repositories for cross-repo intelligence.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <span class="tag" style="border-color: var(--line-firm);">AI</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-4-4 4 4-4 4"/></svg>
+              <span class="tag" style="border-color: var(--line-firm);">MCP</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-4-4 4 4-4 4"/></svg>
+              <span class="tag" style="border-color: var(--line-firm);">tools</span>
+            </div>
+            <h3>Native MCP Integration</h3>
+            <p>Native MCP server with 25 tools and a transparent, secure API proxy for your AI assistants.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ── Setup ─────────────────────────────────────────────────── -->
+      <section class="section" id="setup" aria-labelledby="setup-h">
+        <h2 id="setup-h" class="section-h reveal">Setup</h2>
+        <div class="grid-3">
+
+          <article class="card reveal">
+            <div class="step-head"><span class="step-num">1</span><h3>Connect Repositories</h3></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:8px 0;">
+              <div style="display:flex;gap:32px;align-items:center;">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                  <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor" aria-hidden="true" style="color:var(--fg-1)"><path d="M0 12 12 0l12 12-12 12L0 12zm12-7L5 12l7 7 7-7-7-7z"/></svg>
+                  <span style="font-size:11px;color:var(--fg-2);">Azure DevOps</span>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+                  <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor" aria-hidden="true" style="color:var(--fg-1)"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.3-3.2-.1-.4-.6-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.3.8.8 1.3 2 1.3 3.3 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+                  <span style="font-size:11px;color:var(--fg-2);">GitHub</span>
+                </div>
+              </div>
+              <span style="font-size:12px;color:var(--fg-2);">(Git and TFVC)</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="step-head"><span class="step-num">2</span><h3>Automatic Indexing</h3></div>
+            <div class="indexing-stages">
+              <div><span>AST parsing</span><div class="preview">─── ──
+──────
+─── ──</div></div>
+              <div><span>Embeddings generation</span><div class="preview">0.43 0.12
+0.88 0.05
+0.21 0.99</div></div>
+              <div><span>Graph building</span><div class="preview">◇ ─ ◇
+│   │
+◇ ─ ◇</div></div>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="step-head"><span class="step-num">3</span><h3>Activate MCP Server</h3></div>
+            <p style="font-size:13px;">Add your Engram MCP configuration to an AI tool.</p>
+            <pre><span style="color:var(--fg-2);">{</span>
+  <span style="color:var(--copper-200);">"mcpServers"</span>: {
+    <span style="color:var(--copper-200);">"engram"</span>: {
+      <span style="color:var(--copper-200);">"url"</span>: <span style="color:var(--fg-0);">"https://..."</span>
+    }
+  }
+<span style="color:var(--fg-2);">}</span></pre>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ── Works with ─────────────────────────────────────────────── -->
+      <section class="section" aria-labelledby="works-h">
+        <h2 id="works-h" class="section-h reveal">Works with</h2>
+        <div class="works-grid reveal">
+          <div class="works-col">
+            <span class="works-label">Source Control</span>
+            <div class="works-row">
+              <div class="product">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 12 12 0l12 12-12 12L0 12zm12-7L5 12l7 7 7-7-7-7z"/></svg>
+                <span>Azure DevOps</span>
+              </div>
+              <div class="product">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.3-3.2-.1-.4-.6-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.3.8.8 1.3 2 1.3 3.3 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+                <span>GitHub</span>
+              </div>
+            </div>
+          </div>
+          <div class="works-col">
+            <span class="works-label">AI Tools</span>
+            <div class="works-row">
+              <div class="product">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="4" x2="14" y2="20"/><line x1="11" y1="4" x2="19" y2="20"/></svg>
+                <span>Claude Code</span>
+              </div>
+              <div class="product">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 2 7v10l10 5 10-5V7L12 2zm0 2.3 7.5 3.7L12 11.7 4.5 8 12 4.3zM4 9.3l7 3.5v8L4 17.3v-8zm9 11.5v-8l7-3.5v8l-7 3.5z"/></svg>
+                <span>Cursor</span>
+              </div>
+            </div>
+          </div>
+          <div class="works-col">
+            <span class="works-label">Languages</span>
+            <div class="works-row">
+              <span class="tag" style="font-size:12px;padding:4px 10px;">C#</span>
+              <span class="tag" style="font-size:12px;padding:4px 10px;">TS</span>
+              <span class="tag" style="font-size:12px;padding:4px 10px;">PY</span>
+              <span class="tag" style="font-size:12px;padding:4px 10px;">JAVA</span>
+              <span class="tag" style="font-size:12px;padding:4px 10px;">GO</span>
+              <span class="tag" style="font-size:12px;padding:4px 10px;">SQL</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Deployment ─────────────────────────────────────────────── -->
+      <section class="section" id="deployment" aria-labelledby="deploy-h">
+        <h2 id="deploy-h" class="section-h reveal">Deployment</h2>
+        <div class="deploy-block reveal">
+          <div>
+            <h3>Tailored Installations on Your Infrastructure</h3>
+            <p>In-person or remote setup</p>
+            <p>Contact Mitch at: <a href="mailto:mitch@pragmaticcoder.com">mitch@pragmaticcoder.com</a></p>
+          </div>
+          <a href="demo.html" class="deploy-cta">Request Info →</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── Footer ──────────────────────────────────────────────────── -->
+    <footer class="footer">
+      <span>© 2026 Pragmatic Coder Ltd</span>
+      <span class="footer-spark" aria-hidden="true"></span>
+    </footer>
+
   </div>
+</div>
 
-  <section class="hero">
-    <div class="wrap">
-      <h1>Your AI coding tools<br>are guessing about<br>your codebase.</h1>
-      <p class="lede">Engram indexes your repositories and gives AI assistants semantic search, knowledge graphs, and cross-repo context. Via MCP or transparent proxy&mdash;no code changes required.</p>
-      <div class="cta-row">
-        <a href="mailto:mitch@pragmaticcoder.com" class="btn-primary">Request access</a>
-        <a href="#what" class="btn-secondary">How it works &darr;</a>
-      </div>
-    </div>
-    <div class="wrap-wide">
-      <div class="terminal">
-        <div class="terminal-bar">
-          <div class="terminal-dot"></div>
-          <div class="terminal-dot"></div>
-          <div class="terminal-dot"></div>
-        </div>
-        <pre><span class="comment"># Ask your AI assistant about code it's never seen</span>
-
-<span class="cmd">claude</span> <span class="str">"How does the payment webhook handler validate signatures?"</span>
-
-<span class="comment"># Engram enriches the request with relevant context:</span>
-<span class="out">  engram: searched 3 repos, </span><span class="val">847 files indexed</span>
-<span class="out">  engram: found </span><span class="val">4 relevant symbols</span><span class="out"> across 2 services</span>
-
-<span class="hit">  PaymentWebhookController.cs:42</span>  <span class="out">ValidateHmacSignature()</span>
-<span class="hit">  WebhookMiddleware.cs:18</span>         <span class="out">ISignatureValidator injection</span>
-<span class="hit">  PaymentEvents.cs:67</span>             <span class="out">WebhookReceived event handler</span>
-<span class="hit">  docs/webhooks.md:1</span>              <span class="out">Signature validation sequence</span>
-
-<span class="comment"># Your assistant responds with real answers, not hallucinated ones.</span></pre>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="what" id="what">
-    <div class="wrap">
-      <h2 class="section-heading">What Engram does</h2>
-      <div class="capabilities">
-        <div class="cap">
-          <h3>Semantic search</h3>
-          <p>Vector embeddings + AST symbol extraction across 7 languages. Search by intent, not just text. Domain and component tags keep results precise.</p>
-        </div>
-        <div class="cap">
-          <h3>Knowledge graph</h3>
-          <p>Commits, work items, and code dependencies as a traversable graph. Multi-hop queries connect code to the business decisions behind it.</p>
-        </div>
-        <div class="cap">
-          <h3>Cross-repo context</h3>
-          <p>Fan-out queries across repo groups with rank fusion. Detects shared contracts, message queue boundaries, and API coupling between services.</p>
-        </div>
-        <div class="cap">
-          <h3>MCP + API proxy</h3>
-          <p>25 MCP tools for Claude Code, Cursor, and others. Or use the transparent proxy to inject context with zero config&mdash;no agent cooperation needed.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="how">
-    <div class="wrap">
-      <h2 class="section-heading">Setup</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-n">01</div>
-          <div class="step-body">
-            <h3>Point at your repos</h3>
-            <p>Azure DevOps or GitHub. Git or TFVC. Webhook-driven indexing on every push.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-n">02</div>
-          <div class="step-body">
-            <h3>Indexing runs in the background</h3>
-            <p>AST parsing, vector embeddings, graph construction. Incremental after first run.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-n">03</div>
-          <div class="step-body">
-            <h3>Add to your AI tools</h3>
-            <p>One line in your MCP config, or deploy the proxy. Your assistant gets codebase context immediately.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="supports">
-    <div class="wrap">
-      <h2 class="section-heading">Works with</h2>
-      <p class="sub">Index any VCS. Search from any AI tool.</p>
-      <div class="tag-grid">
-        <span class="tag">Azure DevOps</span>
-        <span class="tag">GitHub</span>
-        <span class="tag">Git + TFVC</span>
-        <span class="tag">Claude Code</span>
-        <span class="tag">Cursor</span>
-        <span class="tag">Any MCP client</span>
-        <span class="tag">C# / .NET</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">Python</span>
-        <span class="tag">Java</span>
-        <span class="tag">Go</span>
-        <span class="tag">SQL</span>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <h2 class="section-heading">Deployment</h2>
-      <p>Engram is deployed on your infrastructure. Custom installations available in-person or remote.</p>
-      <p style="margin-top: 20px;"><a href="mailto:mitch@pragmaticcoder.com">Get in touch</a> to discuss your setup.</p>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="footer">
-    <div class="wrap">
-      <div class="footer-logo">
-        <img src="images/favicon-64.png" alt="Engram" class="logo-icon" style="width:24px;height:24px;">
-        <span class="wordmark" style="font-size:15px;">engram</span>
-      </div>
-      <div class="footer-links">
-        <a href="mailto:mitch@pragmaticcoder.com">Contact</a>
-      </div>
-      <small>&copy; 2026 Pragmatic Coder Ltd</small>
-    </div>
-  </section>
-
+<script src="main.js" defer></script>
 </body>
 </html>
