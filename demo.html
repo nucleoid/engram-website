@@ -44,7 +44,12 @@
         Tell us a bit about your team and codebase. We'll reach out to schedule a tailored walkthrough — in-person or remote.
       </p>
 
-      <form id="demo-form" novalidate>
+      <form action="https://formsubmit.co/mitch@pragmaticcoder.com" method="POST">
+        <input type="hidden" name="_subject" value="Engram demo request">
+        <input type="hidden" name="_next" value="https://engram.pragmaticcoder.com/demo.html?sent=1">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="text" name="_honey" style="display:none">
+
         <div class="field">
           <label for="name">Your name</label>
           <input id="name" name="name" type="text" required autocomplete="name"/>
@@ -77,17 +82,11 @@
           <button type="submit" class="btn btn-primary">Send request</button>
           <a href="mailto:mitch@pragmaticcoder.com" class="btn btn-ghost">Email Mitch directly</a>
         </div>
-
-        <p class="field-hint" style="margin-top:18px;">
-          Submitting opens your mail client with a pre-filled message to <a href="mailto:mitch@pragmaticcoder.com">mitch@pragmaticcoder.com</a>.
-          No data is sent to any server from this form.
-        </p>
       </form>
     </main>
 
     <footer class="footer">
       <span>© 2026 Pragmatic Coder Ltd</span>
-      <span class="footer-spark" aria-hidden="true"></span>
     </footer>
   </div>
 </div>
@@ -95,21 +94,15 @@
 <script src="main.js" defer></script>
 <script>
 (function () {
-  var form = document.getElementById('demo-form');
-  if (!form) return;
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var f = form.elements;
-    var subject = encodeURIComponent('Engram demo request — ' + (f.company.value || f.name.value || 'New lead'));
-    var body = encodeURIComponent(
-      'Name: ' + f.name.value + '\n' +
-      'Email: ' + f.email.value + '\n' +
-      'Company: ' + f.company.value + '\n' +
-      'Repos: ' + f.repos.value + '\n\n' +
-      'Notes:\n' + f.notes.value + '\n'
-    );
-    window.location.href = 'mailto:mitch@pragmaticcoder.com?subject=' + subject + '&body=' + body;
-  });
+  if (window.location.search.indexOf('sent=1') !== -1) {
+    var form = document.querySelector('form');
+    if (form) {
+      form.innerHTML = '<div style="padding:40px 0;text-align:center;">' +
+        '<h2 style="font-size:24px;margin-bottom:12px;">Request sent</h2>' +
+        '<p style="color:var(--fg-1);">Mitch will be in touch soon.</p>' +
+        '</div>';
+    }
+  }
 })();
 </script>
 </body>

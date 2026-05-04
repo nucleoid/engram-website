@@ -606,12 +606,6 @@ pre {
   font-size: 13px;
   color: var(--fg-2);
 }
-.footer-spark {
-  width: 16px; height: 16px;
-  background: var(--copper-400);
-  clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
-  box-shadow: var(--glow-sm);
-}
 
 /* ── Reveal-on-scroll ──────────────────────────────────────────────── */
 .reveal {
