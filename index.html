@@ -40,7 +40,7 @@
   "name": "Engram",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Cross-platform",
-  "description": "Codebase intelligence platform that gives AI coding assistants deep semantic search, knowledge graphs, and cross-repo context via MCP.",
+  "description": "Codebase intelligence platform that gives AI coding assistants deep semantic search, knowledge graphs, pre-compiled knowledge artifacts, and cross-repo context via MCP.",
   "url": "https://engram.pragmaticcoder.com/",
   "publisher": {
     "@type": "Organization",
@@ -146,7 +146,33 @@
               <span class="tag" style="border-color: var(--line-firm);">tools</span>
             </div>
             <h3>Native MCP Integration</h3>
-            <p>Native MCP server with 25 tools and a transparent, secure API proxy for your AI assistants.</p>
+            <p>Native MCP server with 27 tools and a transparent, secure API proxy for your AI assistants.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ── Knowledge Artifacts ──────────────────────────────────────── -->
+      <section class="section" aria-labelledby="artifacts-h">
+        <h2 id="artifacts-h" class="section-h reveal">Pre-Compiled Knowledge</h2>
+        <div class="grid-2">
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <span class="tag" style="border-color: var(--line-firm);">module_briefing</span>
+              <span class="tag" style="border-color: var(--line-firm);">scope_pack</span>
+            </div>
+            <h3>Module Briefings &amp; Scope Packs</h3>
+            <p>Per-community architecture overviews with entry points, and per-directory API surface bundles with import graphs. Compiled at index time.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <span class="tag" style="border-color: var(--line-firm);">symbol_context</span>
+              <span class="tag" style="border-color: var(--line-firm);">contract_map</span>
+            </div>
+            <h3>Symbol Contexts &amp; Contract Maps</h3>
+            <p>Per-symbol bundles with callers, callees, work items, and commits. Plus materialized cross-repo contract topology. Zero LLM cost at query time.</p>
           </article>
 
         </div>
@@ -188,12 +214,12 @@
               <div><span>AST parsing</span><div class="preview">─── ──
 ──────
 ─── ──</div></div>
-              <div><span>Embeddings generation</span><div class="preview">0.43 0.12
-0.88 0.05
+              <div><span>Embeddings + graph</span><div class="preview">0.43 0.12
+◇ ─ ◇
 0.21 0.99</div></div>
-              <div><span>Graph building</span><div class="preview">◇ ─ ◇
-│   │
-◇ ─ ◇</div></div>
+              <div><span>Artifact compilation</span><div class="preview">briefing
+context
+scope</div></div>
             </div>
           </article>
 
