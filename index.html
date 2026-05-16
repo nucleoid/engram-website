@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Engram — Ground truth for your AI coding tools</title>
-<meta name="description" content="Engram indexes your source code with deep semantic search, knowledge graphs, and cross-repo context — exposed to Claude Code, Cursor, and other AI coding tools via the MCP protocol."/>
+<title>Engram: Ground truth for your AI coding tools</title>
+<meta name="description" content="Engram indexes your source code with deep semantic search, knowledge graphs, and cross-repo context, exposed to Claude Code, Cursor, and other AI coding tools via the MCP protocol."/>
 <meta name="theme-color" content="#0B0907"/>
 <link rel="canonical" href="https://engram.pragmaticcoder.com/"/>
 <link rel="icon" type="image/png" href="assets/logo-mark.png"/>
@@ -13,15 +13,15 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://engram.pragmaticcoder.com/"/>
-<meta property="og:title" content="Engram — Ground truth for your AI coding tools"/>
-<meta property="og:description" content="Deep semantic search, knowledge graphs, and cross-repo context for Claude Code, Cursor, and other AI coding tools — via MCP."/>
+<meta property="og:title" content="Engram: Ground truth for your AI coding tools"/>
+<meta property="og:description" content="Deep semantic search, knowledge graphs, and cross-repo context for Claude Code, Cursor, and other AI coding tools, via MCP."/>
 <meta property="og:image" content="assets/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Engram — Ground truth for your AI coding tools"/>
+<meta name="twitter:title" content="Engram: Ground truth for your AI coding tools"/>
 <meta name="twitter:description" content="Codebase intelligence for AI coding assistants. Native MCP server."/>
 <meta name="twitter:image" content="assets/og-image.png"/>
 
@@ -72,8 +72,9 @@
         </button>
         <div class="nav-links" id="nav-links">
           <a href="#features">Features</a>
+          <a href="#reliability">Production</a>
           <a href="#setup">Setup</a>
-          <a href="#deployment">Deployment</a>
+          <a href="#operate">Operate</a>
           <a href="demo.html" class="btn btn-primary" style="padding:8px 14px;font-size:11px;">Request demo</a>
         </div>
       </nav>
@@ -83,12 +84,13 @@
 
       <!-- ── Hero ──────────────────────────────────────────────────── -->
       <section class="hero hero-stacked">
-        <figure class="hero-lockup reveal" aria-label="Engram — Codebase Intelligence Platform">
-          <img src="assets/logo-hero.png" alt="Engram — Codebase Intelligence Platform"/>
+        <figure class="hero-lockup reveal" aria-label="Engram: Codebase Intelligence Platform">
+          <img src="assets/logo-hero.png" alt="Engram: Codebase Intelligence Platform"/>
         </figure>
         <div class="hero-copy reveal">
           <h1>Your AI coding tools are guessing about your codebase</h1>
           <p class="hero-lede">Give them ground truth with Engram.</p>
+          <p class="hero-sub">Self-hosted codebase intelligence. Deployed inside your perimeter, indexed against your repos, exposed to your AI tools over MCP.</p>
           <a class="btn btn-primary" href="demo.html">Contact us for demo</a>
         </div>
       </section>
@@ -104,7 +106,7 @@
               <span class="tag">TS</span><span class="tag">JS</span><span class="tag">PY</span><span class="tag">C#</span><span class="tag">JAVA</span><span class="tag">GO</span><span class="tag">RUST</span><span class="tag">RUBY</span><span class="tag">PHP</span><span class="tag">KOTLIN</span><span class="tag">SWIFT</span><span class="tag">C/C++</span><span class="tag">SQL</span>
             </div>
             <h3>Deep Semantic Search</h3>
-            <p>Understand intent across languages with vector embeddings.</p>
+            <p>Understand intent across languages with vector embeddings. Powered by Azure OpenAI <span class="mono-inline">text-embedding-3-large</span>, batched and parallelised at index time.</p>
           </article>
 
           <article class="card reveal">
@@ -134,7 +136,7 @@
               <span class="tag" style="border-color: var(--line-firm);">repo-b</span>
             </div>
             <h3>Cross-Repository Context</h3>
-            <p>Analyze dependencies and contracts across multiple repositories for cross-repo intelligence.</p>
+            <p>Materialised contract maps surface producers and consumers across every indexed repo. One question, every caller. No per-repo blind spots.</p>
           </article>
 
           <article class="card reveal">
@@ -146,7 +148,7 @@
               <span class="tag" style="border-color: var(--line-firm);">tools</span>
             </div>
             <h3>Native MCP Integration</h3>
-            <p>Native MCP server with 27 tools and a transparent, secure API proxy for your AI assistants.</p>
+            <p>30+ MCP tools plus a transparent, secure API proxy for your AI assistants. <span class="mono-inline">search_code</span>, <span class="mono-inline">contract_map</span>, <span class="mono-inline">trace_flow</span>, <span class="mono-inline">brief_repo</span>, <span class="mono-inline">find_impact_graph</span>, and more.</p>
           </article>
 
         </div>
@@ -173,6 +175,39 @@
             </div>
             <h3>Symbol Contexts &amp; Contract Maps</h3>
             <p>Per-symbol bundles with callers, callees, work items, and commits. Plus materialized cross-repo contract topology. Zero LLM cost at query time.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ── Built for production ─────────────────────────────────────── -->
+      <section class="section" id="reliability" aria-labelledby="reliability-h">
+        <h2 id="reliability-h" class="section-h reveal">Built for production</h2>
+        <p class="section-sub reveal">Engram runs against working codebases that change all day. The worker pipeline is designed for that.</p>
+        <div class="grid-3">
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="13" width="7" height="7" rx="1.5"/><rect x="14" y="13" width="7" height="7" rx="1.5"/><circle cx="6.5" cy="7.5" r="1" fill="currentColor"/><circle cx="17.5" cy="7.5" r="1" fill="currentColor"/><circle cx="6.5" cy="16.5" r="1" fill="currentColor"/></svg>
+            </div>
+            <h3>Multi-pod safe</h3>
+            <p>Workers heartbeat into the queue. If a pod disappears mid-job, another picks the work up from where it stopped. No silent stalls, no duplicate runs.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.3"/><path d="M21 4v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.3"/><path d="M3 20v-5h5"/></svg>
+            </div>
+            <h3>Deploy-resilient</h3>
+            <p>Jobs interrupted by a rolling deploy are auto-restarted at the front of the queue. Canary deploys ship with telemetry baselines, dev environments serialise to keep things sane.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="14" x2="14" y2="14"/><line x1="4" y1="20" x2="9" y2="20"/><circle cx="20" cy="8" r="1.6" fill="currentColor"/><circle cx="14" cy="14" r="1.6" fill="currentColor"/><circle cx="9" cy="20" r="1.6" fill="currentColor"/></svg>
+            </div>
+            <h3>Priority-aware queue</h3>
+            <p>Priority-weighted dequeue and dynamic per-job timeouts. A 30-minute mono-repo full reindex won't starve the canary checking a five-file change.</p>
           </article>
 
         </div>
@@ -210,17 +245,12 @@
 
           <article class="card reveal">
             <div class="step-head"><span class="step-num">2</span><h3>Automatic Indexing</h3></div>
-            <div class="indexing-stages">
-              <div><span>AST parsing</span><div class="preview">─── ──
-──────
-─── ──</div></div>
-              <div><span>Embeddings + graph</span><div class="preview">0.43 0.12
-◇ ─ ◇
-0.21 0.99</div></div>
-              <div><span>Artifact compilation</span><div class="preview">briefing
-context
-scope</div></div>
-            </div>
+            <p style="font-size:13px;">Three modes, pick per repo or per run:</p>
+            <ul class="reindex-modes">
+              <li><span class="mode-tag">Full</span><span>Re-parse, re-embed, re-compile artifacts from scratch.</span></li>
+              <li><span class="mode-tag">Incremental</span><span>Only touched files since the last indexed commit.</span></li>
+              <li><span class="mode-tag">Recompile</span><span>Keep the index, rebuild the artifacts. Fast.</span></li>
+            </ul>
           </article>
 
           <article class="card reveal">
@@ -233,6 +263,108 @@ scope</div></div>
     }
   }
 <span style="color:var(--fg-2);">}</span></pre>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ── Operate it ─────────────────────────────────────────────── -->
+      <section class="section" id="operate" aria-labelledby="operate-h">
+        <h2 id="operate-h" class="section-h reveal">Operate it</h2>
+        <p class="section-sub reveal">A dashboard for the people who run Engram, not just the people who query it.</p>
+
+        <div class="ops-grid">
+
+          <article class="ops-panel reveal" aria-label="Stats panel preview">
+            <header class="ops-panel-head">
+              <span class="ops-panel-title">Stats</span>
+              <span class="ops-panel-meta">all repos</span>
+            </header>
+            <div class="ops-stat-grid">
+              <div class="ops-stat"><span class="ops-stat-label">Repos</span><span class="ops-stat-value">42</span></div>
+              <div class="ops-stat"><span class="ops-stat-label">Symbols</span><span class="ops-stat-value">1.8M</span></div>
+              <div class="ops-stat"><span class="ops-stat-label">Embeddings</span><span class="ops-stat-value">94%</span></div>
+              <div class="ops-stat"><span class="ops-stat-label">Work items</span><span class="ops-stat-value">11.2k</span></div>
+            </div>
+            <div class="ops-bar-group" aria-hidden="true">
+              <div class="ops-bar-label">Top repos by symbols</div>
+              <div class="ops-bar-row"><span>nexus</span><span class="ops-bar"><span style="width:92%"></span></span></div>
+              <div class="ops-bar-row"><span>co-api</span><span class="ops-bar"><span style="width:74%"></span></span></div>
+              <div class="ops-bar-row"><span>booking</span><span class="ops-bar"><span style="width:51%"></span></span></div>
+              <div class="ops-bar-row"><span>content</span><span class="ops-bar"><span style="width:38%"></span></span></div>
+            </div>
+          </article>
+
+          <article class="ops-panel reveal" aria-label="Health panel preview">
+            <header class="ops-panel-head">
+              <span class="ops-panel-title">Health</span>
+              <span class="ops-panel-meta">live</span>
+            </header>
+            <div class="ops-health-row">
+              <span class="ops-health-dot ok" aria-hidden="true"></span>
+              <span class="ops-health-name">Worker pod</span>
+              <span class="ops-health-val">heartbeat 4s</span>
+            </div>
+            <div class="ops-health-row">
+              <span class="ops-health-dot ok" aria-hidden="true"></span>
+              <span class="ops-health-name">Embedding pipeline</span>
+              <span class="ops-health-val">14 / min</span>
+            </div>
+            <div class="ops-health-row">
+              <span class="ops-health-dot warn" aria-hidden="true"></span>
+              <span class="ops-health-name">content-api</span>
+              <span class="ops-health-val">stale 2d</span>
+            </div>
+            <div class="ops-health-row">
+              <span class="ops-health-dot ok" aria-hidden="true"></span>
+              <span class="ops-health-name">Artifact freshness</span>
+              <span class="ops-health-val">98%</span>
+            </div>
+            <div class="ops-timeline" aria-hidden="true">
+              <span class="ops-timeline-label">Index timeline (24h)</span>
+              <svg viewBox="0 0 200 32" preserveAspectRatio="none" width="100%" height="32">
+                <polyline fill="none" stroke="var(--copper-300)" stroke-width="1.4"
+                  points="0,22 12,18 24,20 36,14 48,16 60,10 72,12 84,8 96,11 108,6 120,9 132,5 144,7 156,4 168,6 180,3 192,5 200,4"/>
+                <line x1="0" y1="28" x2="200" y2="28" stroke="var(--line-soft)" stroke-width="0.5"/>
+              </svg>
+            </div>
+          </article>
+
+          <article class="ops-panel reveal" aria-label="Job Queue panel preview">
+            <header class="ops-panel-head">
+              <span class="ops-panel-title">Job Queue</span>
+              <span class="ops-panel-meta">3 running &middot; 12 pending</span>
+            </header>
+            <div class="ops-queue-row">
+              <span class="ops-pill running"><span class="ops-pill-dot" aria-hidden="true"></span>running</span>
+              <span class="ops-queue-repo">nexus</span>
+              <span class="ops-queue-mode">Incremental</span>
+              <span class="ops-queue-prog"><span style="width:72%"></span></span>
+            </div>
+            <div class="ops-queue-row">
+              <span class="ops-pill running"><span class="ops-pill-dot" aria-hidden="true"></span>running</span>
+              <span class="ops-queue-repo">co-api</span>
+              <span class="ops-queue-mode">Full</span>
+              <span class="ops-queue-prog"><span style="width:34%"></span></span>
+            </div>
+            <div class="ops-queue-row">
+              <span class="ops-pill pending">pending</span>
+              <span class="ops-queue-repo">booking</span>
+              <span class="ops-queue-mode">Recompile</span>
+              <span class="ops-queue-prog"><span style="width:0%"></span></span>
+            </div>
+            <div class="ops-queue-row">
+              <span class="ops-pill done">done</span>
+              <span class="ops-queue-repo">content</span>
+              <span class="ops-queue-mode">Incremental</span>
+              <span class="ops-queue-prog done"><span style="width:100%"></span></span>
+            </div>
+            <div class="ops-queue-row">
+              <span class="ops-pill done">done</span>
+              <span class="ops-queue-repo">identity</span>
+              <span class="ops-queue-mode">Full</span>
+              <span class="ops-queue-prog done"><span style="width:100%"></span></span>
+            </div>
           </article>
 
         </div>
