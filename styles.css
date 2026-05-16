@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────────────────────────────────────
-   Engram — production stylesheet (plain CSS)
+   Engram: production stylesheet (plain CSS)
    Tokens are inlined here (no @import of the design system file) so the site
    ships as a single CSS request.
    ───────────────────────────────────────────────────────────────────────────── */
@@ -143,7 +143,7 @@ button { font: inherit; }
   overflow: hidden;
 }
 
-/* Page atmosphere — soft copper glow + subtle grain, no stretched textures */
+/* Page atmosphere: soft copper glow + subtle grain, no stretched textures */
 .bg-atmos {
   position: absolute;
   inset: 0;
@@ -156,7 +156,7 @@ button { font: inherit; }
     radial-gradient(80% 60% at 50% 110%, rgba(217,119,87,0.06) 0%, rgba(217,119,87,0) 60%);
 }
 .bg-atmos::after {
-  /* Very faint grid — lives well behind copy, nothing to do with screenshots */
+  /* Very faint grid: lives well behind copy, nothing to do with screenshots */
   content: "";
   position: absolute;
   inset: 0;
@@ -356,7 +356,7 @@ pre {
   }
 }
 
-/* Stacked variant — single column, lockup over copy, both centered */
+/* Stacked variant: single column, lockup over copy, both centered */
 .hero-stacked {
   grid-template-columns: 1fr !important;
   text-align: center;
@@ -383,9 +383,17 @@ pre {
 .hero-lede {
   font-size: clamp(16px, 1.6vw, 18px);
   color: var(--fg-1);
-  margin: 24px 0 32px;
+  margin: 24px 0 12px;
   line-height: 1.45;
 }
+.hero-sub {
+  margin: 0 0 28px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--fg-2);
+  max-width: 60ch;
+}
+.hero-stacked .hero-sub { margin-inline: auto; text-wrap: balance; }
 .hero-diagram {
   width: min(480px, 100%);
   height: auto;
@@ -670,6 +678,281 @@ pre {
   line-height: 1;
   letter-spacing: -0.05em;
   text-shadow: 0 0 40px rgba(217,119,87,0.4);
+}
+
+/* ── Section sub ───────────────────────────────────────────────────── */
+.section-sub {
+  margin: -8px 0 28px;
+  font-size: 14px;
+  color: var(--fg-2);
+  max-width: 64ch;
+  line-height: 1.55;
+}
+
+/* ── Inline mono (for tool names, identifiers, etc.) ───────────────── */
+.mono-inline {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  color: var(--copper-200);
+  background: rgba(217,119,87,0.06);
+  border: 1px solid var(--line-soft);
+  padding: 0 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* ── Reindex modes list (Setup step 2) ─────────────────────────────── */
+.reindex-modes {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--fg-1);
+}
+.reindex-modes li {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: baseline;
+  gap: 10px;
+}
+.mode-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--copper-200);
+  border: 1px solid var(--line-firm);
+  border-radius: 4px;
+  padding: 2px 6px;
+  text-align: center;
+}
+
+/* ── Operate it: dashboard panels ──────────────────────────────────── */
+.ops-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 960px) {
+  .ops-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+.ops-panel {
+  background:
+    linear-gradient(180deg, rgba(217,119,87,0.04), transparent 40%),
+    var(--bg-1);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-lg);
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-card);
+  transition: border-color var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+.ops-panel:hover { border-color: var(--line-firm); box-shadow: var(--shadow-card-hover); }
+.ops-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line-cool);
+  padding-bottom: 10px;
+}
+.ops-panel-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--fg-0);
+  letter-spacing: 0.01em;
+}
+.ops-panel-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-2);
+}
+
+/* Stats panel */
+.ops-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.ops-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  background: var(--bg-2);
+  border: 1px solid var(--line-cool);
+  border-radius: var(--r-sm);
+}
+.ops-stat-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-2);
+}
+.ops-stat-value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--copper-200);
+  line-height: 1;
+}
+.ops-bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ops-bar-label {
+  font-size: 11px;
+  color: var(--fg-2);
+  margin-bottom: 2px;
+}
+.ops-bar-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-1);
+}
+.ops-bar {
+  display: block;
+  height: 6px;
+  background: var(--bg-2);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.ops-bar > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--copper-400), var(--copper-200));
+}
+
+/* Health panel */
+.ops-health-row {
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--fg-1);
+}
+.ops-health-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 8px rgba(111,169,104,0.5);
+}
+.ops-health-dot.warn {
+  background: var(--warning);
+  box-shadow: 0 0 8px rgba(224,178,90,0.5);
+}
+.ops-health-dot.err {
+  background: var(--danger);
+  box-shadow: 0 0 8px rgba(216,106,90,0.5);
+}
+.ops-health-val {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-2);
+}
+.ops-timeline {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line-cool);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ops-timeline-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-2);
+}
+
+/* Job Queue panel */
+.ops-queue-row {
+  display: grid;
+  grid-template-columns: 64px 1fr 70px;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line-cool);
+  font-size: 12px;
+}
+.ops-queue-row:last-child { border-bottom: none; }
+.ops-queue-repo {
+  font-family: var(--font-mono);
+  color: var(--fg-1);
+  font-size: 12px;
+}
+.ops-queue-mode {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--fg-2);
+  text-align: right;
+}
+.ops-queue-row .ops-queue-prog {
+  grid-column: 1 / -1;
+  display: block;
+  height: 4px;
+  background: var(--bg-2);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.ops-queue-prog > span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--copper-500), var(--copper-300));
+  transition: width var(--dur-slow) var(--ease-out);
+}
+.ops-queue-prog.done > span { background: var(--success); opacity: 0.7; }
+.ops-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 99px;
+  border: 1px solid var(--line-soft);
+  color: var(--fg-2);
+  background: var(--bg-2);
+}
+.ops-pill.running {
+  color: var(--copper-200);
+  border-color: var(--line-firm);
+  background: rgba(217,119,87,0.08);
+}
+.ops-pill.pending {
+  color: var(--fg-2);
+}
+.ops-pill.done {
+  color: var(--success);
+  border-color: rgba(111,169,104,0.35);
+  background: rgba(111,169,104,0.06);
+}
+.ops-pill-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+  animation: ops-pulse 1.6s ease-in-out infinite;
+}
+@keyframes ops-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ops-pill-dot { animation: none; }
 }
 
 /* ── Diagram-specific animations ───────────────────────────────────── */
