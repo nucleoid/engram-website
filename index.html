@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Engram: Ground truth for your AI coding tools</title>
-<meta name="description" content="Engram indexes your source code with deep semantic search, knowledge graphs, and cross-repo context, exposed to Claude Code, Cursor, and other AI coding tools via the MCP protocol."/>
+<title>Engram: Codebase Intelligence Platform</title>
+<meta name="description" content="Codebase intelligence platform. Builds call graphs, traces execution flow, detects cross-repo contracts, and maps blast radius. 14 languages via tree-sitter AST, 9 work item providers, pre-compiled knowledge artifacts. Self-hosted, exposed via MCP."/>
 <meta name="theme-color" content="#0B0907"/>
 <link rel="canonical" href="https://engram.pragmaticcoder.com/"/>
 <link rel="icon" type="image/png" href="assets/logo-mark.png"/>
@@ -13,16 +13,16 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://engram.pragmaticcoder.com/"/>
-<meta property="og:title" content="Engram: Ground truth for your AI coding tools"/>
-<meta property="og:description" content="Deep semantic search, knowledge graphs, and cross-repo context for Claude Code, Cursor, and other AI coding tools, via MCP."/>
+<meta property="og:title" content="Engram: Codebase Intelligence Platform"/>
+<meta property="og:description" content="Call graphs, execution tracing, cross-repo contracts, blast radius mapping. 14 languages, 9 work item providers, pre-compiled knowledge artifacts. Self-hosted, exposed via MCP."/>
 <meta property="og:image" content="assets/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Engram: Ground truth for your AI coding tools"/>
-<meta name="twitter:description" content="Codebase intelligence for AI coding assistants. Native MCP server."/>
+<meta name="twitter:title" content="Engram: Codebase Intelligence Platform"/>
+<meta name="twitter:description" content="Call graphs, execution tracing, cross-repo contracts, blast radius mapping. Self-hosted codebase intelligence via MCP."/>
 <meta name="twitter:image" content="assets/og-image.png"/>
 
 <!-- Fonts -->
@@ -40,7 +40,7 @@
   "name": "Engram",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Cross-platform",
-  "description": "Codebase intelligence platform that gives AI coding assistants deep semantic search, knowledge graphs, pre-compiled knowledge artifacts, and cross-repo context via MCP.",
+  "description": "Codebase intelligence platform. Builds call graphs, traces execution flow, detects cross-repo contracts, and maps blast radius. 14 languages via tree-sitter AST, 9 work item providers, pre-compiled knowledge artifacts. Self-hosted, exposed via MCP.",
   "url": "https://engram.pragmaticcoder.com/",
   "publisher": {
     "@type": "Organization",
@@ -88,9 +88,9 @@
           <img src="assets/logo-hero.png" alt="Engram: Codebase Intelligence Platform"/>
         </figure>
         <div class="hero-copy reveal">
-          <h1>Your AI coding tools are guessing about your codebase</h1>
-          <p class="hero-lede">Give them ground truth with Engram.</p>
-          <p class="hero-sub">Self-hosted codebase intelligence. Deployed inside your perimeter, indexed against your repos, exposed to your AI tools over MCP.</p>
+          <h1>Not a search engine for code. A structural understanding layer.</h1>
+          <p class="hero-lede">Engram builds call graphs, traces execution flow, detects cross-repo contracts, and maps blast radius across entire codebases.</p>
+          <p class="hero-sub">Parses 14 languages via tree-sitter AST, links code to work items from 9 providers, and pre-compiles knowledge artifacts for zero-cost retrieval. Self-hosted inside your perimeter, exposed to your AI tools over MCP. Your agents answer "why," not just "where."</p>
           <a class="btn btn-primary" href="demo.html">Contact us for demo</a>
         </div>
       </section>
@@ -141,6 +141,22 @@
 
           <article class="card reveal">
             <div class="card-icons" aria-hidden="true">
+              <svg viewBox="0 0 80 28" fill="none" width="80" height="28">
+                <circle cx="12" cy="14" r="5" stroke="currentColor" stroke-width="1.4" fill="rgba(217,119,87,0.15)"/>
+                <circle cx="40" cy="8" r="4" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="40" cy="22" r="3" stroke="currentColor" stroke-width="1.4"/>
+                <circle cx="64" cy="14" r="4" stroke="currentColor" stroke-width="1.4"/>
+                <line x1="17" y1="14" x2="36" y2="8" stroke="rgba(217,119,87,0.7)" stroke-width="1.6"/>
+                <line x1="17" y1="14" x2="37" y2="22" stroke="rgba(217,119,87,0.7)" stroke-width="1.6"/>
+                <line x1="44" y1="8" x2="60" y2="14" stroke="rgba(217,119,87,0.3)"/>
+              </svg>
+            </div>
+            <h3>Call Graph &amp; Impact Analysis</h3>
+            <p>Static call-site extraction with multi-pass name resolution across 14 languages. Trace forward execution from any HTTP route or entry point. Reverse BFS finds all upstream callers with log-scaled risk scoring. Know the blast radius before you touch a line.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
               <span class="tag" style="border-color: var(--line-firm);">AI</span>
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14m-4-4 4 4-4 4"/></svg>
               <span class="tag" style="border-color: var(--line-firm);">MCP</span>
@@ -148,7 +164,15 @@
               <span class="tag" style="border-color: var(--line-firm);">tools</span>
             </div>
             <h3>Native MCP Integration</h3>
-            <p>30+ MCP tools plus a transparent, secure API proxy for your AI assistants. <span class="mono-inline">search_code</span>, <span class="mono-inline">contract_map</span>, <span class="mono-inline">trace_flow</span>, <span class="mono-inline">brief_repo</span>, <span class="mono-inline">find_impact_graph</span>, and more.</p>
+            <p>34 MCP tools plus a transparent, secure API proxy for your AI assistants. <span class="mono-inline">search_code</span>, <span class="mono-inline">contract_map</span>, <span class="mono-inline">trace_flow</span>, <span class="mono-inline">structural_impact</span>, <span class="mono-inline">find_impact_graph</span>, <span class="mono-inline">detect_communities</span>, and more.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><line x1="8.5" y1="7.5" x2="10" y2="16" stroke="rgba(217,119,87,0.5)"/><line x1="15.5" y1="7.5" x2="14" y2="16" stroke="rgba(217,119,87,0.5)"/><line x1="9" y1="6" x2="15" y2="6" stroke="rgba(217,119,87,0.5)"/></svg>
+            </div>
+            <h3>Architectural Community Detection</h3>
+            <p>Union-Find clustering over call graph edges automatically discovers architectural modules. Labels by dominant directory, identifies entry points, and generates architecture docs without any LLM cost.</p>
           </article>
 
         </div>
