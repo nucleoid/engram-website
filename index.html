@@ -47,7 +47,14 @@
     "name": "Pragmatic Coder Ltd",
     "email": "mitch@pragmaticcoder.com"
   },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/PreOrder" }
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "USD",
+    "lowPrice": "15000",
+    "highPrice": "75000",
+    "offerCount": "3",
+    "availability": "https://schema.org/InStock"
+  }
 }
 </script>
 </head>
@@ -67,7 +74,7 @@
           <img src="assets/logo-mark.png" alt=""/>
           <span>Engram</span>
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
         <div class="nav-links" id="nav-links">
@@ -75,6 +82,7 @@
           <a href="#reliability">Production</a>
           <a href="#setup">Setup</a>
           <a href="#operate">Operate</a>
+          <a href="#pricing">Pricing</a>
           <a href="demo.html" class="btn btn-primary" style="padding:8px 14px;font-size:11px;">Request demo</a>
         </div>
       </nav>
@@ -90,7 +98,7 @@
         <div class="hero-copy reveal">
           <h1>Not a search engine for code. A structural understanding layer.</h1>
           <p class="hero-lede">Engram builds call graphs, traces execution flow, detects cross-repo contracts, and maps blast radius across entire codebases.</p>
-          <p class="hero-sub">Parses 14 languages via tree-sitter AST, links code to work items from 9 providers, and pre-compiles knowledge artifacts for zero-cost retrieval. Self-hosted inside your perimeter, exposed to your AI tools over MCP. Your agents answer "why," not just "where."</p>
+          <p class="hero-sub">Parses 14 languages via tree-sitter AST, links tickets to code and commits from 9 work item providers, ingests compiled build and deployment metadata, and pre-compiles knowledge artifacts for zero-cost retrieval. Self-hosted inside your perimeter, exposed to your AI tools over MCP. Your agents answer "why," not just "where."</p>
           <a class="btn btn-primary" href="demo.html">Contact us for demo</a>
         </div>
       </section>
@@ -125,7 +133,7 @@
               </svg>
             </div>
             <h3>Codebase Knowledge Graph</h3>
-            <p>Connect commits, work items, PR reviews, code reviews, call graphs, import graphs, and type hierarchies into a single, queryable knowledge graph with temporal scoring.</p>
+            <p>Connect tickets, commits, PR reviews, code reviews, compiled artifacts, deployments, call graphs, import graphs, and type hierarchies into a single, queryable knowledge graph with temporal scoring.</p>
           </article>
 
           <article class="card reveal">
@@ -198,7 +206,7 @@
               <span class="tag" style="border-color: var(--line-firm);">contract_map</span>
             </div>
             <h3>Symbol Contexts &amp; Contract Maps</h3>
-            <p>Per-symbol bundles with callers, callees, work items, review context, and commits. Plus materialized cross-repo contract topology. Zero LLM cost at query time.</p>
+            <p>Per-symbol bundles with callers, callees, tickets, review context, commits, and release signals. Plus materialized cross-repo contract topology. Zero LLM cost at query time.</p>
           </article>
 
         </div>
@@ -208,6 +216,18 @@
       <section class="section" id="reliability" aria-labelledby="reliability-h">
         <h2 id="reliability-h" class="section-h reveal">Built for production</h2>
         <p class="section-sub reveal">Engram runs against working codebases that change all day. The worker pipeline is designed for that.</p>
+        <div class="proof-block reveal">
+          <div>
+            <span class="eyebrow">Production reference</span>
+            <h3>Running at House of Travel</h3>
+            <p>Engram is in production at House of Travel, indexing roughly 150 repositories across 14 languages with Git and TFVC running side by side.</p>
+          </div>
+          <div class="proof-stats">
+            <span><strong>~150</strong> repositories</span>
+            <span><strong>14</strong> languages</span>
+            <span><strong>Git + TFVC</strong> source control</span>
+          </div>
+        </div>
         <div class="grid-3">
 
           <article class="card reveal">
@@ -263,7 +283,7 @@
                   <span style="font-size:10px;color:var(--fg-2);">Bitbucket</span>
                 </div>
               </div>
-              <span style="font-size:12px;color:var(--fg-2);">Source control (Git & TFVC) + ticket tracking</span>
+              <span style="font-size:12px;color:var(--fg-2);">Source control (Git &amp; TFVC) + ticket tracking</span>
             </div>
           </article>
 
@@ -512,6 +532,39 @@
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- ── Pricing ─────────────────────────────────────────────── -->
+      <section class="section" id="pricing" aria-labelledby="pricing-h">
+        <h2 id="pricing-h" class="section-h reveal">Pricing</h2>
+        <p class="section-sub reveal">Annual self-hosted licensing. Every tier includes the full platform, unlimited repositories, and unlimited agent or MCP queries.</p>
+        <div class="pricing-grid">
+          <article class="pricing-card reveal">
+            <span class="pricing-kicker">Team</span>
+            <h3>Up to 25 developers</h3>
+            <p class="price"><span>US$15k</span>/year</p>
+            <p>For engineering teams bringing codebase intelligence into daily AI-assisted development.</p>
+          </article>
+          <article class="pricing-card pricing-card-featured reveal">
+            <span class="pricing-kicker">Growth</span>
+            <h3>Up to 75 developers</h3>
+            <p class="price"><span>US$36k</span>/year</p>
+            <p>For larger teams standardising Engram across multiple product areas and shared services.</p>
+          </article>
+          <article class="pricing-card reveal">
+            <span class="pricing-kicker">Enterprise</span>
+            <h3>Unlimited developers</h3>
+            <p class="price"><span>From US$75k</span>/year</p>
+            <p>For organisation-wide deployments, complex environments, and rollout support.</p>
+          </article>
+        </div>
+        <div class="pilot-block reveal">
+          <div>
+            <h3>Paid pilot</h3>
+            <p>Run Engram for 60 days against your own codebase for US$3k. The pilot fee is credited if you convert to an annual license.</p>
+          </div>
+          <a href="demo.html" class="btn btn-primary">Request pilot</a>
         </div>
       </section>
 

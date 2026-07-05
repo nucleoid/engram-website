@@ -18,6 +18,21 @@
     });
   }
 
+  // ── Hash links after font/layout settle ──────────────────────────
+  function alignHashTarget() {
+    if (!window.location.hash || window.location.hash.length < 2) return;
+    var id = window.location.hash.slice(1);
+    try { id = decodeURIComponent(id); } catch (err) { return; }
+    var target = document.getElementById(id);
+    if (target) target.scrollIntoView({ block: 'start' });
+  }
+  window.addEventListener('load', function () {
+    window.setTimeout(alignHashTarget, 120);
+  });
+  window.addEventListener('hashchange', function () {
+    window.setTimeout(alignHashTarget, 0);
+  });
+
   // ── Reveal-on-scroll (no-op if reduced motion) ───────────────────
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var reveals = document.querySelectorAll('.reveal');
