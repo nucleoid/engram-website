@@ -572,22 +572,6 @@ pre {
   line-height: 1.2;
 }
 
-.research-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: flex-start;
-}
-.research-actions span {
-  color: var(--fg-2);
-  font-size: 13px;
-  line-height: 1.5;
-}
-.research-actions code {
-  color: var(--copper-200);
-  overflow-wrap: anywhere;
-}
-
 /* ── Setup steps ───────────────────────────────────────────────────── */
 .step-head {
   display: flex;
