@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engram Commercial Competitor Brief - July 2026</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17202a;
+      --muted: #607084;
+      --line: #d7dee8;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --blue: #1f5eff;
+      --teal: #087f8c;
+      --green: #177245;
+      --amber: #9a6500;
+      --red: #b23a48;
+      --violet: #6d44b8;
+      --shadow: 0 14px 42px rgba(24, 36, 58, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.48;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      background: #111827;
+      color: #fff;
+      border-bottom: 6px solid var(--teal);
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 46px 0 38px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #9ee4d8;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 58px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      max-width: 900px;
+    }
+
+    .hero p {
+      margin: 16px 0 0;
+      color: #d5deea;
+      font-size: 18px;
+      max-width: 760px;
+    }
+
+    .stamp {
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.06);
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    .stamp strong {
+      display: block;
+      font-size: 13px;
+      color: #9ee4d8;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin-bottom: 8px;
+    }
+
+    .stamp span {
+      display: block;
+      color: #edf3fb;
+      font-size: 14px;
+      margin: 4px 0;
+    }
+
+    main { padding: 28px 0 56px; }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      margin: 18px 0;
+      padding: 24px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 17px;
+      letter-spacing: 0;
+    }
+
+    p { margin: 0 0 12px; }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    li { margin: 6px 0; }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--blue);
+      border-radius: 8px;
+      padding: 16px;
+      background: #fbfcff;
+      min-height: 134px;
+    }
+
+    .metric:nth-child(2) { border-left-color: var(--teal); }
+    .metric:nth-child(3) { border-left-color: var(--amber); }
+    .metric:nth-child(4) { border-left-color: var(--violet); }
+
+    .metric strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .callout {
+      border-left: 5px solid var(--green);
+      background: #f0faf5;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 14px;
+    }
+
+    .warning {
+      border-left-color: var(--red);
+      background: #fff4f5;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 14px;
+    }
+
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #eef3f9;
+      color: #243142;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    tbody tr:hover { background: #fbfcff; }
+
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 9px;
+      margin: 2px 4px 2px 0;
+      font-size: 12px;
+      font-weight: 750;
+      background: #eaf0ff;
+      color: #183c95;
+      white-space: nowrap;
+    }
+
+    .tag.high { background: #ffecef; color: #982534; }
+    .tag.med { background: #fff3d6; color: #7a4d00; }
+    .tag.low { background: #e9f8f0; color: #12603b; }
+    .tag.neutral { background: #eef2f6; color: #4b5b70; }
+
+    .score {
+      font-weight: 850;
+      font-size: 16px;
+    }
+
+    .score.high { color: var(--red); }
+    .score.med { color: var(--amber); }
+    .score.low { color: var(--green); }
+
+    .company {
+      font-weight: 850;
+      color: #111827;
+    }
+
+    .quote {
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fbfcff;
+      color: #2f3d4f;
+    }
+
+    .refs {
+      columns: 2;
+      column-gap: 32px;
+      padding-left: 20px;
+    }
+
+    .refs li {
+      break-inside: avoid;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 13px;
+      padding: 10px 0 30px;
+    }
+
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid.four, .grid.three, .grid.two { grid-template-columns: 1fr; }
+      .refs { columns: 1; }
+      table { font-size: 13px; }
+      th, td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">Engram commercial intelligence</p>
+        <h1>Competitor brief for the codebase context and agent knowledge market</h1>
+        <p>Updated scan of AI coding assistants, code graph platforms, PR review tools, and developer knowledge systems. The lens is Engram's commercial opportunity: task-ready, source-cited, agent-usable understanding of why code exists, not just where code lives.</p>
+      </div>
+      <div class="stamp">
+        <strong>Snapshot</strong>
+        <span>Prepared: 11 July 2026</span>
+        <span>Research mode: current web scan, Engram internal positioning notes, and current GitHub issue roadmap</span>
+        <span>Best read for: pricing, positioning, sales objections, moat</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Executive Readout</h2>
+      <div class="grid four">
+        <div class="metric">
+          <strong>Closest direct threat</strong>
+          <span>Unblocked. It now describes itself as a context engine for AI-driven software development, spans code, PRs, Slack/Teams, Jira/Linear, docs, incidents, MCP, CLI, and cited answers.</span>
+        </div>
+        <div class="metric">
+          <strong>Strongest platform threat</strong>
+          <span>Sourcegraph. Its pricing page now explicitly sells codebase context, MCP access, Deep Search, Batch Changes, Insights, single-tenant cloud, and self-hosting from a $16k enterprise entry point.</span>
+        </div>
+        <div class="metric">
+          <strong>Sharpest ecosystem threat</strong>
+          <span>Atlassian Rovo Dev. Jira acceptance-criteria validation plus work-item-to-code execution is directly adjacent to Engram's business-intent story, but it is Atlassian-bound.</span>
+        </div>
+        <div class="metric">
+          <strong>Engram wedge</strong>
+          <span>Own implementation memory: lineage, agent write-back, domain-specific tools, as-of history, compiled artifacts, and self-hosted flat pricing.</span>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Bottom line:</strong> the market has moved from "AI autocomplete" to "agents need reliable organizational context." That validates Engram. The current Engram issue roadmap also makes the commercial story materially stronger than a static code-search comparison: Engram is moving toward <strong>decision-grade implementation memory for software teams</strong>, grounded in code, work items, review history, artifacts, generated domain tools, and agent write-back.
+      </div>
+    </section>
+
+    <section>
+      <h2>Roadmap Assumptions From Current GitHub Issues</h2>
+      <p>This brief treats current interrogated GitHub issues in <code>nucleoid/engram-csharp</code> as near-term functionality or bug fixes likely to land. That matters: several of the biggest roadmap items directly answer the strongest competitors.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Roadmap capability</th>
+            <th>Issue evidence</th>
+            <th>Commercial effect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Agent write-back layer and shared cognition loop</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/645">#645</a></td>
+            <td>Moves Engram beyond read-only context. Agents can store discovered facts against symbols with evidence, confidence, and drift decay, turning repeated agent learning into organizational memory.</td>
+          </tr>
+          <tr>
+            <td>Domain-aware retrieval and generated MCP tool factory</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/650">#650</a></td>
+            <td>Creates a clearer wedge against generic MCP/context providers: Engram can manufacture domain-specific tools such as <code>query_payments</code> or <code>explain_settlement_flow</code> from its own classifications.</td>
+          </tr>
+          <tr>
+            <td>"Why is it like this?" org-memory oracle</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/616">#616</a></td>
+            <td>Directly productizes the core moat: work item, commit, review, and code provenance into an <code>explain_history</code> MCP tool.</td>
+          </tr>
+          <tr>
+            <td>Retained-history as-of context</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/652">#652</a></td>
+            <td>Adds a forensic time axis for incident response and postmortems, a capability live-only code search products rarely expose.</td>
+          </tr>
+          <tr>
+            <td>Self-refactoring index and deterministic debt filing</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/651">#651</a>, <a href="https://github.com/nucleoid/engram-csharp/issues/684">#684</a></td>
+            <td>Reframes Engram from observer to actor: it can detect debt, file grounded issues, and later draft human-gated refactor PRs.</td>
+          </tr>
+          <tr>
+            <td>One-call PR review grounding pack</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/601">#601</a></td>
+            <td>Makes Engram a context substrate for CodeRabbit/Greptile/Qodo/Copilot-style review instead of competing only as a review bot.</td>
+          </tr>
+          <tr>
+            <td>Contract Sentinel and cross-repo API evolution warnings</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/610">#610</a>, <a href="https://github.com/nucleoid/engram-csharp/issues/691">#691</a></td>
+            <td>Commercially valuable for multi-repo enterprises: producer changes can warn affected consumers before staging breaks.</td>
+          </tr>
+          <tr>
+            <td>Deterministic architecture wiki export</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/613">#613</a></td>
+            <td>Adds "docs that cannot lie" as a buyer-friendly artifact for onboarding, audits, architecture reviews, and platform governance.</td>
+          </tr>
+          <tr>
+            <td>Tenant-aware repository authorization and compliance evidence</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/676">#676</a>, <a href="https://github.com/nucleoid/engram-csharp/issues/678">#678</a></td>
+            <td>Closes a key enterprise security objection and gives regulated buyers access/trigger audit evidence.</td>
+          </tr>
+          <tr>
+            <td>Self-hosted release, licensing, DR, and air-gap packaging</td>
+            <td><a href="https://github.com/nucleoid/engram-csharp/issues/581">#581</a>, <a href="https://github.com/nucleoid/engram-csharp/issues/585">#585</a>, <a href="https://github.com/nucleoid/engram-csharp/issues/590">#590</a>, <a href="https://github.com/nucleoid/engram-csharp/issues/679">#679</a></td>
+            <td>Turns the self-hosted pricing story into a deliverable enterprise product motion: semver releases, offline licenses, air-gap bundles, and backup/restore.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <strong>Adjusted conclusion:</strong> if these roadmap items land, Engram should not be positioned as "codebase context with better lineage." It should be positioned as the <strong>implementation memory and agent cognition substrate</strong> for complex engineering organizations.
+      </div>
+    </section>
+
+    <section>
+      <h2>Market Map</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Representative vendors</th>
+            <th>What buyers think they are buying</th>
+            <th>Why it matters for Engram</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Enterprise code graph and code search</td>
+            <td>Sourcegraph</td>
+            <td>Find, understand, govern, and change large codebases.</td>
+            <td>Closest in technical surface area. Engram needs deeper business provenance, agent write-back, domain-generated tools, and stronger agent context exports.</td>
+          </tr>
+          <tr>
+            <td>Developer knowledge/context engines</td>
+            <td>Unblocked, Tabnine Context Engine</td>
+            <td>Answer questions with cited context from code, docs, tickets, chat, incidents, and standards.</td>
+            <td>Direct validation of Engram's market. Also the most obvious competitive objection in a sales call; Engram answers with deeper implementation lineage, as-of history, and write-back memory.</td>
+          </tr>
+          <tr>
+            <td>IDE-native coding agents</td>
+            <td>Cursor, Augment Code, GitHub Copilot Enterprise</td>
+            <td>Make developers faster in the editor with indexed codebase context, agents, and governance.</td>
+            <td>They own daily developer workflow. Engram should integrate with them via MCP/API, not try to replace every IDE assistant.</td>
+          </tr>
+          <tr>
+            <td>Work-management ecosystem agents</td>
+            <td>Atlassian Rovo Dev, GitHub Copilot Spaces</td>
+            <td>Turn issues, specs, and collaboration context into code, reviews, and answers inside the platform they already use.</td>
+            <td>They are dangerous defaults. Engram wins where organizations are multi-tool, Azure DevOps-heavy, self-hosted, or need audit-grade traceability and cross-agent memory.</td>
+          </tr>
+          <tr>
+            <td>PR review automation</td>
+            <td>Greptile, CodeRabbit, Qodo</td>
+            <td>Catch bugs and reduce review time with code-aware AI review.</td>
+            <td>Adjacent, not substitute. They can become Engram consumers if Engram exposes richer context to reviewers.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Competitive Matrix</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Commercial posture</th>
+            <th>Context sources</th>
+            <th>Pricing signal</th>
+            <th>Threat</th>
+            <th>Engram counter-position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="company">Unblocked</span><br><span class="tag high">closest direct</span></td>
+            <td>Context engine for AI-driven software development. Web, Mac app, Slack/Teams, MCP, CLI, API, code review, cited answers.</td>
+            <td>Code, PRs, Slack, Teams, Jira, Linear, Confluence, Notion, incidents, monitoring, docs, GitHub/GitLab/Bitbucket/Azure DevOps.</td>
+            <td>Plans start at $19/user/month. Platform tier shown at $29/user/month annually; enterprise adds on-premises options and data-center integrations.</td>
+            <td><span class="score high">High</span></td>
+            <td>Go narrower and deeper: source-of-truth lineage, compiled artifacts, implementation memory, work-item-to-code-to-binary provenance, agent write-back, as-of history, and flat self-hosted pricing.</td>
+          </tr>
+          <tr>
+            <td><span class="company">Sourcegraph</span><br><span class="tag high">platform threat</span></td>
+            <td>Enterprise platform to understand, oversee, and evolve complex codebases. Includes Deep Search, Batch Changes, Insights, MCP, API, CLI.</td>
+            <td>Major code hosts and languages, code graph, code search, batch changes, enterprise admin, single-tenant cloud, self-hosted.</td>
+            <td>Enterprise starts at $16k and includes AI-feature credits. Cody pricing has been shifting, with enterprise/credit packaging now the main story.</td>
+            <td><span class="score high">High</span></td>
+            <td>Do not compete as generic code search. Lead with the why layer plus generated domain tools, retained history, contract warnings, and agent write-back that Sourcegraph does not appear to own.</td>
+          </tr>
+          <tr>
+            <td><span class="company">Atlassian Rovo Dev</span><br><span class="tag high">ecosystem threat</span></td>
+            <td>Agentic AI for software teams across planning, coding, review, automation, IDE, CLI, GitHub, and Jira.</td>
+            <td>Jira work items, acceptance criteria, Bitbucket/GitHub PRs, codebases, Atlassian platform knowledge, VS Code, CLI.</td>
+            <td>Rovo Dev Standard generally available; credits tied to Atlassian cloud plans and Rovo Dev usage.</td>
+            <td><span class="score high">High</span></td>
+            <td>Vendor-neutral and Azure DevOps-ready. Sell to teams that are not pure Atlassian, need deeper audit trails, private deployment, as-of forensics, or cross-agent memory outside Jira.</td>
+          </tr>
+          <tr>
+            <td><span class="company">Tabnine</span><br><span class="tag med">private AI</span></td>
+            <td>Secure AI code assistant and agentic platform with context engine, private deployment, governance, and standards enforcement.</td>
+            <td>Codebase, Git, Jira, Confluence, Perforce, standards, APIs, docs, examples, MCP tools, IDEs.</td>
+            <td>Code Assistant $39/user/month; Agentic Platform $59/user/month. Self-hosted/VPC/on-prem/air-gapped; unlimited usage when using own LLM.</td>
+            <td><span class="score med">Medium-high</span></td>
+            <td>Tabnine is broad productivity and private AI. Engram should own lifecycle knowledge, traceability, domain-specific generated tools, and agent-readable implementation memory.</td>
+          </tr>
+          <tr>
+            <td><span class="company">Augment Code</span><br><span class="tag med">agent workflow</span></td>
+            <td>Context-engine coding agent for teams, with ticket-to-PR, code review, CLI, MCP/native tools, and enterprise security.</td>
+            <td>Large codebases, tickets, PRs, workflows, context engine, MCP/native tools.</td>
+            <td>Business is $100/month flat up to 50 seats with $100 usage included; enterprise custom with bespoke limits, SSO/OIDC/SCIM, dedicated support.</td>
+            <td><span class="score med">Medium-high</span></td>
+            <td>Augment is an execution agent. Engram should be the reusable knowledge substrate that multiple agents query and write back into before and after acting.</td>
+          </tr>
+          <tr>
+            <td><span class="company">GitHub Copilot Enterprise / Spaces</span><br><span class="tag med">default gravity</span></td>
+            <td>Enterprise coding assistant and agent platform inside GitHub, with Spaces replacing older knowledge-base framing.</td>
+            <td>Repositories, code, pull requests, issues, free-text notes, transcripts, images, uploads, GitHub-native context.</td>
+            <td>Enterprise Copilot historically $39/user/month, with broader GitHub enterprise packaging and agent features layered in.</td>
+            <td><span class="score med">Medium-high</span></td>
+            <td>GitHub-native context is strong but platform-scoped. Engram needs cross-platform depth: Azure DevOps, Jira, GitHub Issues, legacy VCS, binaries, and local deployment.</td>
+          </tr>
+          <tr>
+            <td><span class="company">Cursor</span><br><span class="tag med">workflow owner</span></td>
+            <td>IDE and agent platform with codebase indexing, team privacy mode, cloud agents, Bugbot, usage analytics, SSO, MCP controls.</td>
+            <td>Current repo/codebase chunks, prompts, editor actions, team rules, MCP, cloud agents, Bugbot.</td>
+            <td>Teams $40/user/month; Premium $120/user/month in docs; Enterprise custom with pooled usage, repository/model/MCP access controls, audit logs.</td>
+            <td><span class="score med">Medium</span></td>
+            <td>Cursor owns the IDE, not the enterprise memory layer. Engram should be a high-quality MCP/API source Cursor can consume.</td>
+          </tr>
+          <tr>
+            <td><span class="company">CodeRabbit</span><br><span class="tag med">review bot</span></td>
+            <td>AI PR reviews, IDE/CLI reviews, issue planning, MCP connections, linked repository analysis, enterprise self-hosting option.</td>
+            <td>PRs, repositories, Jira/Linear, SAST/linters, MCP connections, linked repo analysis, Slack agent.</td>
+            <td>Pro $24/user/month annually; Pro Plus $48/user/month annually; Enterprise custom; Slack agent $0.50 per agent minute.</td>
+            <td><span class="score med">Medium</span></td>
+            <td>PR review is a use case. Engram can make review tools smarter via <code>review_context</code>, supplying work-item intent, historical decisions, blast radius, prior review comments, and artifact context.</td>
+          </tr>
+          <tr>
+            <td><span class="company">Greptile</span><br><span class="tag low">review bot</span></td>
+            <td>AI code review and repository-aware code understanding, especially for PR review automation.</td>
+            <td>Repositories, PRs, GitHub Enterprise, code review bot, API/integrations.</td>
+            <td>Pro $30/seat/month with 50 credits per seat; additional credits $1; enterprise custom with self-host option.</td>
+            <td><span class="score low">Low-medium</span></td>
+            <td>Greptile sells review throughput. Engram sells durable context and provenance that can improve any review engine.</td>
+          </tr>
+          <tr>
+            <td><span class="company">Qodo</span><br><span class="tag low">quality agent</span></td>
+            <td>AI code review, testing, and quality workflows, including the Qodo/PR-Agent lineage.</td>
+            <td>GitHub/GitLab/Bitbucket PRs, code review context, tests, quality checks.</td>
+            <td>Public summaries show free/developer tiers and team plans around $30/user/month; enterprise custom.</td>
+            <td><span class="score low">Low-medium</span></td>
+            <td>Similar to CodeRabbit and Greptile: useful adjacent workflow, not the system-of-record context layer.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Pricing changes quickly in this market. Treat all listed public numbers as current research indicators, not procurement-grade quotes.</p>
+    </section>
+
+    <section>
+      <h2>What Changed Recently</h2>
+      <div class="grid two">
+        <div>
+          <h3>1. Context engines are now the category</h3>
+          <p>The old "RAG for code" label is stale. Sourcegraph, Unblocked, Tabnine, Cursor, Augment, and GitHub are all describing some version of organizational context for agents. Engram should use that validation but avoid sounding like a clone.</p>
+        </div>
+        <div>
+          <h3>2. MCP is table stakes</h3>
+          <p>Sourcegraph, Unblocked, Cursor, Augment, Tabnine, CodeRabbit, and GitHub all now mention MCP or agent context controls. Engram's MCP server is no longer novel by itself. The content and trustworthiness of what it serves is the differentiator.</p>
+        </div>
+        <div>
+          <h3>3. Jira and work items are becoming agent inputs</h3>
+          <p>Atlassian Rovo Dev validates against Jira acceptance criteria. Augment sells ticket-to-PR. CodeRabbit integrates Jira and Linear. Unblocked includes Jira, Linear, GitHub Issues, and more. Engram needs to go beyond "we index work items" and claim "we preserve implementation intent."</p>
+        </div>
+        <div>
+          <h3>4. Pricing is bifurcating</h3>
+          <p>Some vendors sell per-seat productivity. Some sell usage credits. Enterprise platforms hide custom pricing. Engram's proposed flat annual self-hosted license with unlimited repos and unlimited MCP/agent queries can be a clean antidote to buyer anxiety.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Engram Positioning Recommendation</h2>
+      <div class="quote">
+        <strong>Recommended one-line category:</strong><br>
+        Engram is a self-hosted implementation memory and agent cognition layer for software teams, giving developers and AI agents cited answers that trace business intent from work item to commit, code, compiled artifact, and learned agent fact.
+      </div>
+
+      <h3>Lead messages</h3>
+      <ul>
+        <li><strong>Explain why code exists.</strong> Most competitors answer what/where/how from source. Engram should answer why by linking work items, acceptance criteria, PRs, review threads, commits, code, artifacts, and as-of history.</li>
+        <li><strong>Built for agent context and agent memory, not just human search.</strong> Every result should be citation-rich, compact, permission-aware, and ready for Claude Code, Codex, Cursor, Copilot, Rovo, or internal agents; every useful agent discovery should be able to write back with evidence.</li>
+        <li><strong>Generate domain-specific tools from the corpus.</strong> The roadmap's domain-aware retrieval turns Engram into an MCP tool factory, giving agents purpose-built, self-updating tools for each business domain.</li>
+        <li><strong>Self-hosted and flat-priced.</strong> Unlimited repos and unlimited agent/MCP queries are commercially meaningful against per-seat, per-credit, and per-review products.</li>
+        <li><strong>Vendor-neutral software memory.</strong> Support GitHub, Azure DevOps, Jira, GitHub Issues, Linear, Confluence, docs, and legacy systems where enterprises actually live.</li>
+        <li><strong>Compiled-artifact intelligence.</strong> Keep this visible. Source code plus binaries/build outputs is a harder moat than another vector index.</li>
+      </ul>
+
+      <div class="callout warning">
+        <strong>Do not pitch Engram as "semantic code search."</strong> That puts it in the commodity lane against Sourcegraph, Cursor, Copilot, Continue, and every IDE assistant. Pitch the lineage, memory, and generated-tool layer.
+      </div>
+    </section>
+
+    <section>
+      <h2>Sales Objections And Responses</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Buyer objection</th>
+            <th>Likely competitor behind it</th>
+            <th>Suggested Engram answer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"We already have Copilot/Cursor/Claude Code."</td>
+            <td>GitHub, Cursor, Anthropic/OpenAI tools</td>
+            <td>Good. Engram is not asking developers to abandon their agent. It gives those agents better, cited enterprise context so they stop rediscovering the same system facts.</td>
+          </tr>
+          <tr>
+            <td>"Sourcegraph already indexes our code."</td>
+            <td>Sourcegraph</td>
+            <td>Sourcegraph is excellent code graph/search infrastructure. Engram's angle is implementation provenance: why a change exists, which work item drove it, what business rule it encodes, and how that context should guide future changes.</td>
+          </tr>
+          <tr>
+            <td>"Unblocked already connects code, tickets, docs, and chat."</td>
+            <td>Unblocked</td>
+            <td>Unblocked is the strongest general knowledge competitor. Engram should compete where depth matters: self-hosted lineage, compiled artifacts, code-to-work-item traceability, as-of context, agent write-back, generated domain tools, Azure DevOps/enterprise customization, and predictable flat pricing.</td>
+          </tr>
+          <tr>
+            <td>"Atlassian can do this with Rovo and Jira."</td>
+            <td>Atlassian Rovo Dev</td>
+            <td>Rovo is compelling for Atlassian-native teams. Engram is for mixed environments, Azure DevOps-heavy teams, GitHub/Jira hybrids, legacy repositories, private deployment, and organizations that need their knowledge layer and agent memory independent of one suite.</td>
+          </tr>
+          <tr>
+            <td>"We only need AI code review."</td>
+            <td>CodeRabbit, Greptile, Qodo</td>
+            <td>Review bots are useful. Engram can feed them richer context through <code>review_context</code>. The bigger problem is preserving implementation memory so every future review, refactor, migration, and agent task starts from the same trusted knowledge.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Commercial Implications</h2>
+      <div class="grid three">
+        <div class="metric">
+          <strong>Pricing</strong>
+          <span>Keep the flat annual self-hosted bands. The market is full of usage pools, credits, agent minutes, and custom enterprise pricing. Predictability is a selling point.</span>
+        </div>
+        <div class="metric">
+          <strong>Packaging</strong>
+          <span>Sell all core features in every tier. Charge by organizational size/support posture, not by making the moat features enterprise-only.</span>
+        </div>
+        <div class="metric">
+          <strong>Proof</strong>
+          <span>Show before/after agent tasks: baseline agent wastes context tokens and guesses intent; Engram-fed agent cites work item, commit, symbol, review thread, build artifact, and prior agent assertion.</span>
+        </div>
+      </div>
+
+      <h3>Recommended public comparison claims</h3>
+      <ul>
+        <li>"Works with your existing AI coding tools rather than replacing them."</li>
+        <li>"Trace code back to the ticket, PR, commit, review thread, and business rule that created it."</li>
+        <li>"Let every agent contribute useful discoveries back into a shared, evidence-grounded implementation memory."</li>
+        <li>"Generate domain-specific MCP tools from the codebase itself."</li>
+        <li>"Self-hosted by default, with no per-query tax on agent usage."</li>
+        <li>"Built for mixed enterprise stacks: Azure DevOps, GitHub, Jira, GitHub Issues, docs, and legacy repositories."</li>
+        <li>"Agent-ready context with citations, not just search results."</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Priority Watchlist</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Watch</th>
+            <th>Why</th>
+            <th>Trigger to revisit Engram strategy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Unblocked enterprise/on-prem traction</td>
+            <td>They are already telling the broadest version of the context-engine story.</td>
+            <td>They add explicit compiled-artifact ingestion or stronger work-item-to-code lineage claims.</td>
+          </tr>
+          <tr>
+            <td>Sourcegraph MCP/code graph packaging</td>
+            <td>Sourcegraph has brand trust and deep code graph credibility.</td>
+            <td>They move from source graph to business-process graph, or price aggressively near Engram's entry bands.</td>
+          </tr>
+          <tr>
+            <td>Atlassian Rovo Dev maturity</td>
+            <td>Jira acceptance criteria validation is a direct narrative collision.</td>
+            <td>Rovo Dev gains strong cross-repo/codebase memory outside Atlassian, or becomes bundled enough that buyers see it as free.</td>
+          </tr>
+          <tr>
+            <td>GitHub Copilot Spaces and agent ecosystem</td>
+            <td>GitHub owns default developer gravity in many organizations.</td>
+            <td>Spaces becomes a true durable implementation-memory layer rather than a context bundle.</td>
+          </tr>
+          <tr>
+            <td>Tabnine Context Engine</td>
+            <td>Private, air-gapped, governance-heavy buyers overlap with Engram's enterprise target.</td>
+            <td>Tabnine adds audit-grade ticket/code/artifact lineage and broad tracker support at a similar price point.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Sources</h2>
+      <ol class="refs">
+        <li><a href="https://sourcegraph.com/pricing">Sourcegraph pricing</a></li>
+        <li><a href="https://sourcegraph.com/docs/cody/usage-and-pricing">Sourcegraph Cody usage and pricing docs</a></li>
+        <li><a href="https://www.augmentcode.com/pricing">Augment Code pricing</a></li>
+        <li><a href="https://www.greptile.com/pricing">Greptile pricing</a></li>
+        <li><a href="https://getunblocked.com/ai-info/">Unblocked AI information page</a></li>
+        <li><a href="https://getunblocked.com/pricing/">Unblocked pricing</a></li>
+        <li><a href="https://www.tabnine.com/pricing/">Tabnine pricing</a></li>
+        <li><a href="https://cursor.com/pricing">Cursor pricing</a></li>
+        <li><a href="https://cursor.com/data-use">Cursor data use and privacy overview</a></li>
+        <li><a href="https://cursor.com/enterprise">Cursor enterprise</a></li>
+        <li><a href="https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/context/knowledge-bases">GitHub Copilot Spaces docs</a></li>
+        <li><a href="https://www.atlassian.com/software/rovo-dev">Atlassian Rovo Dev</a></li>
+        <li><a href="https://www.coderabbit.ai/pricing">CodeRabbit pricing</a></li>
+        <li><a href="https://docs.qodo.ai/code-review">Qodo code review docs</a></li>
+      </ol>
+      <p class="note">Also informed by Engram internal positioning notes: work-item-to-code-commit linkage as secret sauce, compiled-artifact ingestion as moat, broad tracker integration, Git-first positioning, and flat annual self-hosted pricing strategy.</p>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    Prepared for Engram strategy discussion. This is a competitive intelligence snapshot, not legal, procurement, or formal pricing advice.
+  </footer>
+</body>
+</html>
