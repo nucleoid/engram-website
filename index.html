@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Engram: Codebase Intelligence Platform</title>
-<meta name="description" content="Codebase intelligence platform. Builds call graphs, traces execution flow, detects cross-repo contracts, and maps blast radius. 14 languages via tree-sitter AST, 9 work item providers, pre-compiled knowledge artifacts. Self-hosted, exposed via MCP."/>
+<meta name="description" content="Codebase intelligence and change intelligence for complex software estates. Trace execution, map cross-repo dependencies, recover decision context, and understand blast radius before code changes. Self-hosted and available to AI tools over MCP."/>
 <meta name="theme-color" content="#0B0907"/>
 <link rel="canonical" href="https://engram.pragmaticcoder.com/"/>
 <link rel="icon" type="image/png" href="assets/logo-mark.png"/>
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://engram.pragmaticcoder.com/"/>
 <meta property="og:title" content="Engram: Codebase Intelligence Platform"/>
-<meta property="og:description" content="Call graphs, execution tracing, cross-repo contracts, blast radius mapping. 14 languages, 9 work item providers, pre-compiled knowledge artifacts. Self-hosted, exposed via MCP."/>
+<meta property="og:description" content="Structural understanding and change intelligence across code, tickets, reviews, decisions, ownership, and dependencies. Self-hosted and available to AI tools over MCP."/>
 <meta property="og:image" content="assets/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -22,7 +22,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Engram: Codebase Intelligence Platform"/>
-<meta name="twitter:description" content="Call graphs, execution tracing, cross-repo contracts, blast radius mapping. Self-hosted codebase intelligence via MCP."/>
+<meta name="twitter:description" content="Know why software exists—and what could break when it changes. Self-hosted codebase and change intelligence via MCP."/>
 <meta name="twitter:image" content="assets/og-image.png"/>
 
 <!-- Fonts -->
@@ -40,7 +40,7 @@
   "name": "Engram",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Cross-platform",
-  "description": "Codebase intelligence platform. Builds call graphs, traces execution flow, detects cross-repo contracts, and maps blast radius. 14 languages via tree-sitter AST, 9 work item providers, pre-compiled knowledge artifacts. Self-hosted, exposed via MCP.",
+  "description": "Codebase intelligence and change intelligence for complex software estates. Connects code with tickets, reviews, decisions, ownership, and dependencies so teams can understand why software exists and what could break when it changes.",
   "url": "https://engram.pragmaticcoder.com/",
   "publisher": {
     "@type": "Organization",
@@ -78,10 +78,10 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
         <div class="nav-links" id="nav-links">
-          <a href="#features">Features</a>
+          <a href="#features">Platform</a>
+          <a href="#intelligence">Intelligence</a>
+          <a href="#workflow">Workflow</a>
           <a href="#reliability">Production</a>
-          <a href="#setup">Setup</a>
-          <a href="#operate">Operate</a>
           <a href="#pricing">Pricing</a>
           <a href="demo.html" class="btn btn-primary" style="padding:8px 14px;font-size:11px;">Request demo</a>
         </div>
@@ -96,12 +96,20 @@
           <img src="assets/logo-hero.png" alt="Engram: Codebase Intelligence Platform"/>
         </figure>
         <div class="hero-copy reveal">
-          <h1>Not a search engine for code. A structural understanding layer.</h1>
-          <p class="hero-lede">Engram builds call graphs, traces execution flow, detects cross-repo contracts, and maps blast radius across entire codebases.</p>
-          <p class="hero-sub">Parses 14 languages via tree-sitter AST, links tickets to code and commits from 9 work item providers, ingests compiled build and deployment metadata, and pre-compiles knowledge artifacts for zero-cost retrieval. Self-hosted inside your perimeter, exposed to your AI tools over MCP. Your agents answer "why," not just "where."</p>
+          <h1>Know why it exists—and what breaks next.</h1>
+          <p class="hero-lede">Engram is the structural understanding and change-intelligence layer for complex software estates.</p>
+          <p class="hero-sub">It connects code with tickets, reviews, decision history, ownership, call paths, and cross-repository dependencies. Developers and AI tools can answer not only “where is it?” but “why is it this way, who understands it, and what could break if we change it?” Self-hosted inside your perimeter and available over MCP.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="demo.html">Contact us for demo</a>
           </div>
+        </div>
+      </section>
+
+      <section class="section section-tight" aria-label="Engram outcomes">
+        <div class="grid-3">
+          <article class="card reveal"><h3>Safer change</h3><p>See execution paths, upstream callers, contracts, regression history, and likely blast radius before work begins.</p></article>
+          <article class="card reveal"><h3>Faster understanding</h3><p>Orient developers quickly with repository briefings, architecture views, decision context, and implementation lineage.</p></article>
+          <article class="card reveal"><h3>Better-grounded AI</h3><p>Give coding agents current, permission-aware organisational context instead of a handful of open files.</p></article>
         </div>
       </section>
 
@@ -116,7 +124,7 @@
               <span class="tag">TS</span><span class="tag">JS</span><span class="tag">PY</span><span class="tag">C#</span><span class="tag">JAVA</span><span class="tag">GO</span><span class="tag">RUST</span><span class="tag">RUBY</span><span class="tag">PHP</span><span class="tag">KOTLIN</span><span class="tag">SWIFT</span><span class="tag">C/C++</span><span class="tag">SQL</span>
             </div>
             <h3>Deep Semantic Search</h3>
-            <p>Understand intent across languages with vector embeddings. Powered by Azure OpenAI <span class="mono-inline">text-embedding-3-large</span>, batched and parallelised at index time.</p>
+            <p>Understand intent across languages with hybrid structural and semantic retrieval. Pluggable embedding providers include Azure OpenAI, Gemini, Voyage, and Ollama.</p>
           </article>
 
           <article class="card reveal">
@@ -146,7 +154,7 @@
               <span class="tag" style="border-color: var(--line-firm);">repo-b</span>
             </div>
             <h3>Cross-Repository Context</h3>
-            <p>Materialised contract maps surface producers and consumers across every indexed repo. One question, every caller. No per-repo blind spots.</p>
+            <p>Materialised contract maps surface producers and consumers across HTTP APIs, queues, and internal NuGet/npm packages. One question, every caller. No per-repo blind spots.</p>
           </article>
 
           <article class="card reveal">
@@ -174,7 +182,7 @@
               <span class="tag" style="border-color: var(--line-firm);">tools</span>
             </div>
             <h3>Native MCP Integration</h3>
-            <p>34 MCP tools plus a transparent, secure API proxy for your AI assistants. <span class="mono-inline">search_code</span>, <span class="mono-inline">contract_map</span>, <span class="mono-inline">trace_flow</span>, <span class="mono-inline">structural_impact</span>, <span class="mono-inline">find_impact_graph</span>, <span class="mono-inline">detect_communities</span>, and more.</p>
+            <p>35+ MCP tools plus a first-party CLI and transparent, secure API proxy for AI assistants. Search, trace, impact, contract, history, and administration tools share one permission-aware context layer.</p>
           </article>
 
           <article class="card reveal">
@@ -182,9 +190,57 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><line x1="8.5" y1="7.5" x2="10" y2="16" stroke="rgba(217,119,87,0.5)"/><line x1="15.5" y1="7.5" x2="14" y2="16" stroke="rgba(217,119,87,0.5)"/><line x1="9" y1="6" x2="15" y2="6" stroke="rgba(217,119,87,0.5)"/></svg>
             </div>
             <h3>Architectural Community Detection</h3>
-            <p>Union-Find clustering over call graph edges automatically discovers architectural modules. Labels by dominant directory, identifies entry points, and generates architecture docs without any LLM cost.</p>
+            <p>Louvain clustering over call graph edges discovers architectural modules, tracks their split/merge lineage, identifies entry points, and generates architecture documentation without LLM cost.</p>
           </article>
 
+        </div>
+      </section>
+
+      <!-- ── Implementation lineage ─────────────────────────────────── -->
+      <section class="section" id="lineage" aria-labelledby="lineage-h">
+        <h2 id="lineage-h" class="section-h reveal">Implementation lineage</h2>
+        <p class="section-sub reveal">Code rarely explains why it exists. Engram reconnects implementation with the evidence behind it.</p>
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true"><span class="tag">WHY</span><span class="tag">HISTORY</span></div>
+            <h3>Decision history</h3>
+            <p>Trace a subsystem through work items, commits, reviews, and retained historical evidence to understand how it reached its current shape.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true"><span class="tag">ADR</span><span class="tag">RFC</span></div>
+            <h3>Source-authored rationale</h3>
+            <p>Index ADR and RFC citations, comments, and authored rationale as evidence attached to the symbols and files they describe.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icons" aria-hidden="true"><span class="tag">AS OF</span><span class="tag">LINEAGE</span></div>
+            <h3>Time-aware context</h3>
+            <p>Ask what was known at a point in time, identify stale knowledge during rewrites, and distinguish current architecture from historical residue.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ── Engineering intelligence ──────────────────────────────── -->
+      <section class="section" id="intelligence" aria-labelledby="intelligence-h">
+        <h2 id="intelligence-h" class="section-h reveal">Engineering intelligence</h2>
+        <p class="section-sub reveal">Explainable signals for leaders and engineers—not another opaque code-quality score.</p>
+        <div class="grid-3">
+          <article class="card reveal"><h3>Engineering health</h3><p>Executive and technical snapshots surface fragility, test reachability, regression history, semantic anomalies, and architecture drift.</p></article>
+          <article class="card reveal"><h3>Ownership &amp; key-person risk</h3><p>Map recent domain knowledge, ownership concentration, and places where the code's practical ownership no longer matches the organisation chart.</p></article>
+          <article class="card reveal"><h3>Cross-repo duplication</h3><p>Convergent-Evolution Radar identifies semantically similar implementations that evolved independently across repositories.</p></article>
+          <article class="card reveal"><h3>Rewrite Radar</h3><p>Flag actively rewritten subsystems where cached documentation and historical assumptions are becoming stale.</p></article>
+          <article class="card reveal"><h3>Regression provenance</h3><p>Add defect-density and change-history evidence to impact analysis so risky areas receive proportionate review.</p></article>
+          <article class="card reveal"><h3>Human-gated action</h3><p>Turn validated evidence into deterministic technical-debt candidates while keeping filing and prioritisation under human control.</p></article>
+        </div>
+      </section>
+
+      <!-- ── Workflow ──────────────────────────────────────────────── -->
+      <section class="section" id="workflow" aria-labelledby="workflow-h">
+        <h2 id="workflow-h" class="section-h reveal">Where engineering work happens</h2>
+        <p class="section-sub reveal">Engram brings evidence into existing tools instead of demanding another destination.</p>
+        <div class="grid-3">
+          <article class="card reveal"><h3>MCP, CLI &amp; Explore</h3><p>Use 35+ MCP tools from AI coding clients, the first-party <span class="mono-inline">engram</span> CLI in a terminal, or Explore for interactive search and graph navigation.</p></article>
+          <article class="card reveal"><h3>Pull-request context</h3><p>Annotate GitHub pull requests with impact, dependency, and historical context so reviewers see risk at the decision point.</p></article>
+          <article class="card reveal"><h3>Reports &amp; team access</h3><p>Export self-contained interactive HTML graphs and optionally expose ask-the-codebase workflows through Teams or Slack.</p></article>
         </div>
       </section>
 
@@ -222,10 +278,10 @@
           <div>
             <span class="eyebrow">Production reference</span>
             <h3>Running at House of Travel</h3>
-            <p>Engram is in production at House of Travel, indexing roughly 150 repositories across 14 languages with Git and TFVC running side by side.</p>
+            <p>Engram is in production at House of Travel, indexing more than 150 repositories across 14 languages with Git and TFVC running side by side.</p>
           </div>
           <div class="proof-stats">
-            <span><strong>~150</strong> repositories</span>
+            <span><strong>150+</strong> repositories</span>
             <span><strong>14</strong> languages</span>
             <span><strong>Git + TFVC</strong> source control</span>
           </div>
@@ -256,6 +312,18 @@
             <p>Priority-weighted dequeue and dynamic per-job timeouts. A 30-minute mono-repo full reindex won't starve the canary checking a five-file change.</p>
           </article>
 
+        </div>
+        <div class="proof-block reveal" style="margin-top:18px;">
+          <div>
+            <span class="eyebrow">Built under production pressure</span>
+            <h3>Hardened where real systems fail</h3>
+            <p>Recent work strengthened index integrity across interruptions, stale source revisions, provider pagination, webhook replay, rate limits, drift signals, alert delivery, retrieval security, and rolling deployments.</p>
+          </div>
+          <div class="proof-stats">
+            <span><strong>Durable</strong> indexing</span>
+            <span><strong>Permission-aware</strong> retrieval</span>
+            <span><strong>Recoverable</strong> operations</span>
+          </div>
         </div>
       </section>
 
@@ -324,27 +392,27 @@
           <article class="ops-panel reveal" aria-label="Stats panel preview">
             <header class="ops-panel-head">
               <span class="ops-panel-title">Stats</span>
-              <span class="ops-panel-meta">all repos</span>
+              <span class="ops-panel-meta">illustrative preview</span>
             </header>
             <div class="ops-stat-grid">
-              <div class="ops-stat"><span class="ops-stat-label">Repos</span><span class="ops-stat-value">42</span></div>
-              <div class="ops-stat"><span class="ops-stat-label">Symbols</span><span class="ops-stat-value">1.8M</span></div>
-              <div class="ops-stat"><span class="ops-stat-label">Embeddings</span><span class="ops-stat-value">94%</span></div>
-              <div class="ops-stat"><span class="ops-stat-label">Work items</span><span class="ops-stat-value">11.2k</span></div>
+              <div class="ops-stat"><span class="ops-stat-label">Repos</span><span class="ops-stat-value">150+</span></div>
+              <div class="ops-stat"><span class="ops-stat-label">Index</span><span class="ops-stat-value">live</span></div>
+              <div class="ops-stat"><span class="ops-stat-label">Drift</span><span class="ops-stat-value">current</span></div>
+              <div class="ops-stat"><span class="ops-stat-label">Context</span><span class="ops-stat-value">linked</span></div>
             </div>
             <div class="ops-bar-group" aria-hidden="true">
               <div class="ops-bar-label">Top repos by symbols</div>
-              <div class="ops-bar-row"><span>nexus</span><span class="ops-bar"><span style="width:92%"></span></span></div>
-              <div class="ops-bar-row"><span>co-api</span><span class="ops-bar"><span style="width:74%"></span></span></div>
-              <div class="ops-bar-row"><span>booking</span><span class="ops-bar"><span style="width:51%"></span></span></div>
-              <div class="ops-bar-row"><span>content</span><span class="ops-bar"><span style="width:38%"></span></span></div>
+              <div class="ops-bar-row"><span>core-api</span><span class="ops-bar"><span style="width:92%"></span></span></div>
+              <div class="ops-bar-row"><span>web-app</span><span class="ops-bar"><span style="width:74%"></span></span></div>
+              <div class="ops-bar-row"><span>worker</span><span class="ops-bar"><span style="width:51%"></span></span></div>
+              <div class="ops-bar-row"><span>shared-lib</span><span class="ops-bar"><span style="width:38%"></span></span></div>
             </div>
           </article>
 
           <article class="ops-panel reveal" aria-label="Health panel preview">
             <header class="ops-panel-head">
               <span class="ops-panel-title">Health</span>
-              <span class="ops-panel-meta">live</span>
+              <span class="ops-panel-meta">illustrative preview</span>
             </header>
             <div class="ops-health-row">
               <span class="ops-health-dot ok" aria-hidden="true"></span>
@@ -358,7 +426,7 @@
             </div>
             <div class="ops-health-row">
               <span class="ops-health-dot warn" aria-hidden="true"></span>
-              <span class="ops-health-name">content-api</span>
+              <span class="ops-health-name">worker</span>
               <span class="ops-health-val">stale 2d</span>
             </div>
             <div class="ops-health-row">
@@ -379,40 +447,60 @@
           <article class="ops-panel reveal" aria-label="Job Queue panel preview">
             <header class="ops-panel-head">
               <span class="ops-panel-title">Job Queue</span>
-              <span class="ops-panel-meta">3 running &middot; 12 pending</span>
+              <span class="ops-panel-meta">illustrative preview</span>
             </header>
             <div class="ops-queue-row">
               <span class="ops-pill running"><span class="ops-pill-dot" aria-hidden="true"></span>running</span>
-              <span class="ops-queue-repo">nexus</span>
+              <span class="ops-queue-repo">core-api</span>
               <span class="ops-queue-mode">Incremental</span>
               <span class="ops-queue-prog"><span style="width:72%"></span></span>
             </div>
             <div class="ops-queue-row">
               <span class="ops-pill running"><span class="ops-pill-dot" aria-hidden="true"></span>running</span>
-              <span class="ops-queue-repo">co-api</span>
+              <span class="ops-queue-repo">web-app</span>
               <span class="ops-queue-mode">Full</span>
               <span class="ops-queue-prog"><span style="width:34%"></span></span>
             </div>
             <div class="ops-queue-row">
               <span class="ops-pill pending">pending</span>
-              <span class="ops-queue-repo">booking</span>
+              <span class="ops-queue-repo">worker</span>
               <span class="ops-queue-mode">Recompile</span>
               <span class="ops-queue-prog"><span style="width:0%"></span></span>
             </div>
             <div class="ops-queue-row">
               <span class="ops-pill done">done</span>
-              <span class="ops-queue-repo">content</span>
+              <span class="ops-queue-repo">shared-lib</span>
               <span class="ops-queue-mode">Incremental</span>
               <span class="ops-queue-prog done"><span style="width:100%"></span></span>
             </div>
             <div class="ops-queue-row">
               <span class="ops-pill done">done</span>
-              <span class="ops-queue-repo">identity</span>
+              <span class="ops-queue-repo">admin-ui</span>
               <span class="ops-queue-mode">Full</span>
               <span class="ops-queue-prog done"><span style="width:100%"></span></span>
             </div>
           </article>
 
+        </div>
+      </section>
+
+      <!-- ── Enterprise control ────────────────────────────────────── -->
+      <section class="section" id="enterprise" aria-labelledby="enterprise-h">
+        <h2 id="enterprise-h" class="section-h reveal">Enterprise control</h2>
+        <p class="section-sub reveal">Keep source, context, access decisions, and operating evidence inside your environment.</p>
+        <div class="grid-3">
+          <article class="card reveal">
+            <h3>Permission-aware retrieval</h3>
+            <p>Repository-level authorization applies across MCP, search, and Explore so users and AI tools retrieve only repositories they are entitled to access.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Self-hosted releases</h3>
+            <p>Deploy versioned releases through an official OCI Helm chart or generic Docker Compose package, with build information and offline license verification.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Operate and recover</h3>
+            <p>Monitor drift, failures, readiness, rate limits, and queue health. Supported backup, export, and restore workflows provide a practical disaster-recovery path.</p>
+          </article>
         </div>
       </section>
 
@@ -576,7 +664,7 @@
         <div class="deploy-block reveal">
           <div>
             <h3>Tailored Installations on Your Infrastructure</h3>
-            <p>In-person or remote setup</p>
+            <p>Versioned Docker Compose and OCI Helm deployments, installed remotely or in person, with backup and restore support.</p>
             <p>Contact Mitch at: <a href="mailto:mitch@pragmaticcoder.com">mitch@pragmaticcoder.com</a></p>
           </div>
           <a href="demo.html" class="deploy-cta">Request Info →</a>
