@@ -1,4 +1,4 @@
-# Engram — production website
+# Engram - production website
 
 Plain HTML / CSS / JS. Zero build step. Drop the contents of this folder onto any static host (S3, GitHub Pages, nginx, Cloudflare Pages).
 
@@ -37,9 +37,9 @@ Then upload the folder to your host.
 
 Two URL strings to update before going live:
 
-1. `index.html` — `<link rel="canonical">` and the `og:url` meta tag (currently `https://engram.pragmaticcoder.com/`)
-2. `sitemap.xml` and `robots.txt` — same domain
-3. `demo.html` form — `mailto:mitch@pragmaticcoder.com` (update the recipient if it changes)
+1. `index.html` - `<link rel="canonical">` and the `og:url` meta tag (currently `https://engram.pragmaticcoder.com/`)
+2. `sitemap.xml` and `robots.txt` - same domain
+3. `demo.html` form - `mailto:mitch@pragmaticcoder.com` (update the recipient if it changes)
 
 ## What's in
 - **Responsive** desktop + mobile (breakpoints at 720 / 768 / 960 px)
@@ -51,5 +51,5 @@ Two URL strings to update before going live:
 
 ## Caveats / open items
 - Fonts load from Google Fonts CDN. For offline / on-prem deployments, vendor `Sora`, `Manrope`, and `JetBrains Mono` `.woff2` files locally and replace the `@font-face` block.
-- The `og-image.png` was rendered using Sora/Manrope as substitutes — if Engram has a production font, regenerate it with the real face.
+- The `og-image.png` was rendered using Sora/Manrope as substitutes - if Engram has a production font, regenerate it with the real face.
 - Form posts via `mailto:` only. Swap in Formspree / a backend handler if you want a server-side flow.

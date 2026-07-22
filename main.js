@@ -1,4 +1,4 @@
-/* Engram — site behavior */
+/* Engram - site behavior */
 (function () {
   'use strict';
 
