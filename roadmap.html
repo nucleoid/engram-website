@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="refresh.css"/>
 <link rel="stylesheet" href="roadmap.css"/>
 </head>
 <body>
@@ -28,26 +29,15 @@
 <div class="page">
   <div class="bg-atmos" aria-hidden="true"></div>
   <div class="container">
-    <header>
-      <nav class="nav" aria-label="Primary">
-        <a href="/" class="nav-logo" aria-label="Engram home">
-          <img src="assets/logo-mark.png" alt=""/>
-          <span>Engram</span>
-        </a>
-        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        </button>
-        <div class="nav-links" id="nav-links">
-          <a href="index.html#features">Platform</a>
-          <a href="index.html#intelligence">Intelligence</a>
-          <a href="index.html#workflow">Workflow</a>
-          <a href="index.html#reliability">Production</a>
-          <a href="index.html#pricing">Pricing</a>
-          <a href="roadmap.html" aria-current="page">Roadmap</a>
-          <a href="demo.html" class="btn btn-primary nav-demo">Request demo</a>
-        </div>
-      </nav>
-    </header>
+    <header><nav class="nav" aria-label="Primary">
+<a href="/" class="nav-logo" aria-label="Engram home"><img src="/assets/logo-mark.png" width="32" height="32" alt=""/><span>Engram</span></a>
+<button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+<div class="nav-links" id="nav-links"><a href="/platform.html">Platform</a>
+<a href="/examples.html">Examples</a>
+<a href="/deployment.html">Deployment</a>
+<a href="/index.html#pricing">Pricing</a>
+<a href="/roadmap.html" aria-current="page">Roadmap</a><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ03YZjoSkRzZ6Zj6q9sd8sf4mQ4YmHULVEeQg6vgVUbmmpikif88qI9nzSRRGoLaab0dH2Jpx8I" class="btn btn-primary nav-demo">Book a call</a></div>
+</nav></header>
 
     <main id="main" class="roadmap-page">
       <section class="roadmap-intro" aria-labelledby="roadmap-h">
@@ -70,7 +60,7 @@
         <div>
           <p>Structural and semantic search, call and contract graphs, review context, repository onboarding, retained decision history, and shareable HTML graph reports.</p>
           <p class="roadmap-note">GitHub PR annotations and repository authorization are implemented and require configuration. Feature availability depends on your release and enabled options.</p>
-          <a href="index.html#features">Explore the current platform <span aria-hidden="true">→</span></a>
+          <a href="/platform.html">Explore the current platform <span aria-hidden="true">→</span></a>
         </div>
       </aside>
 
@@ -186,10 +176,7 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <span>© 2026 Pragmatic Coder Ltd</span>
-      <a href="index.html">Back to the platform</a>
-    </footer>
+    <footer class="footer"><span>© 2026 Pragmatic Coder Ltd</span><nav aria-label="Footer"><a href="/case-study.html">Production &amp; evaluation</a><a href="/roadmap.html">Roadmap</a><a href="/data-handling.html">Website data handling</a><a href="mailto:mitch@pragmaticcoder.com">Contact Mitch</a></nav></footer>
   </div>
 </div>
 <script src="main.js" defer></script>

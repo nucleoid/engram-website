@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Deploy Engram: Data Flow, Access and Language Coverage</title>
+<meta name="description" content="Understand Engram’s self-hosted deployment, model-provider data flow, repository authorization, operations and language-specific coverage."/>
+<meta name="theme-color" content="#0B0907"/>
+<link rel="canonical" href="https://engram.pragmaticcoder.com/deployment.html"/>
+<link rel="icon" type="image/png" href="/assets/logo-mark.png"/>
+<link rel="apple-touch-icon" href="/assets/logo-mark.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://engram.pragmaticcoder.com/deployment.html"/>
+<meta property="og:title" content="Deploy Engram: Data Flow, Access and Language Coverage"/>
+<meta property="og:description" content="Understand Engram’s self-hosted deployment, model-provider data flow, repository authorization, operations and language-specific coverage."/>
+<meta property="og:image" content="https://engram.pragmaticcoder.com/assets/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Deploy Engram: Data Flow, Access and Language Coverage"/>
+<meta name="twitter:description" content="Understand Engram’s self-hosted deployment, model-provider data flow, repository authorization, operations and language-specific coverage."/>
+<meta name="twitter:image" content="https://engram.pragmaticcoder.com/assets/og-image.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/styles.css"/>
+<link rel="stylesheet" href="/refresh.css"/>
+
+</head><body>
+<a href="#main" class="skip">Skip to main content</a>
+<div class="page"><div class="bg-atmos" aria-hidden="true"></div><div class="container">
+<header><nav class="nav" aria-label="Primary">
+<a href="/" class="nav-logo" aria-label="Engram home"><img src="/assets/logo-mark.png" width="32" height="32" alt=""/><span>Engram</span></a>
+<button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+<div class="nav-links" id="nav-links"><a href="/platform.html">Platform</a>
+<a href="/examples.html">Examples</a>
+<a href="/deployment.html" aria-current="page">Deployment</a>
+<a href="/index.html#pricing">Pricing</a>
+<a href="/roadmap.html">Roadmap</a><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ03YZjoSkRzZ6Zj6q9sd8sf4mQ4YmHULVEeQg6vgVUbmmpikif88qI9nzSRRGoLaab0dH2Jpx8I" class="btn btn-primary nav-demo">Book a call</a></div>
+</nav></header>
+<main id="main"><section class="page-intro"><span class="eyebrow">Deployment & data flow</span><h1>Your infrastructure.<br/>Explicit boundaries.</h1><p class="lead">Engram’s index and services run in your environment. Configure source access, model providers and repository authorization to match how your team works.</p></section><section class="section" id="data-flow" aria-labelledby="data-flow-h"><h2 id="data-flow-h" class="section-h">Where the data goes.</h2><figure class="data-flow"><figcaption class="sr-only">Source systems feed the self-hosted Engram index. People and AI clients query it. Configured embedding and reasoning providers receive selected text.</figcaption>
+<div class="flow-lane"><article><span class="eyebrow">Connected sources</span><h3>Code &amp; work history</h3><p>Repositories, commits, work items and review evidence.</p></article><span class="flow-arrow" aria-hidden="true">→</span><article class="flow-core"><span class="eyebrow">Your deployment</span><h3>Engram services &amp; index</h3><p>Parse, resolve, embed and compile. Store source context, vectors, graph relationships and retained history in your database.</p></article><span class="flow-arrow" aria-hidden="true">↔</span><article><span class="eyebrow">Your users &amp; tools</span><h3>MCP, CLI &amp; Explore</h3><p>Return context to authenticated clients according to the access controls you configure.</p></article></div>
+<div class="provider-lane"><span class="provider-connector" aria-hidden="true">↕</span><div><span class="eyebrow">Configured model endpoints · local or external</span><p><strong>Embedding:</strong> source chunks and search text go to the configured embedding service.</p><p><strong>Optional reasoning:</strong> selected context and prompts go to the model used by enabled features or your AI client.</p></div></div></figure>
+<p class="section-note">A local Ollama embedding endpoint is an option. It does not make separately configured reasoning features or AI clients offline. Review each enabled path and its provider settings.</p></section>
+<section class="section" id="access" aria-labelledby="access-h"><h2 id="access-h" class="section-h">Configure access before connecting users.</h2><div class="grid-2"><article class="card"><h3>Identity and repository scope</h3><p>Repository authorization supports Disabled, diagnostic Shadow and Enforce modes. The configuration default is Disabled. Select enforcement deliberately, map authenticated identities to repository access, and validate allowed and denied queries.</p><p>Confirm identity propagation for each surface you enable. Optional bot integrations need a separate scope review; do not assume a client’s access model applies to every integration.</p></article><article class="card"><h3>Network and credentials</h3><p>Provide access to your source and work-item APIs, the PostgreSQL index, configured model endpoints and any enabled integrations. Release installation also needs access to its distribution artifacts.</p><p>Keep source tokens and model credentials in your environment’s secret-management facilities. Use TLS and restrict service exposure to the clients and operators that need it.</p></article></div></section>
+<section class="section" id="operations" aria-labelledby="operations-h"><h2 id="operations-h" class="section-h">Plan the operating path.</h2><div class="grid-3"><article class="card"><h3>Versioned installation</h3><p>Docker Compose and OCI Helm packaging provide versioned deployment paths. Confirm storage, ingress, resources, authentication and model settings against your chosen release. Enterprise chart customization continues to evolve.</p></article><article class="card"><h3>Indexing and freshness</h3><p>Use full, incremental or artifact-recompile jobs as appropriate. Unchanged work can be reused; graph and cross-file processing vary by source provider. Monitor jobs and indexed revisions rather than assuming every successful query is current.</p></article><article class="card"><h3>Recovery and upgrades</h3><p>Backup, export and restore workflows support recovery planning. Test a restore using your release and data. Reverting an application image does not reverse database migrations; upgrade and recovery compatibility must be checked.</p></article></div><p class="section-note">Offline license verification is available when configured. A complete air-gap distribution bundle is an exploratory roadmap item. Release packaging does not imply a compliance certification or universal infrastructure compatibility.</p></section>
+<section class="section" id="languages" aria-labelledby="languages-h"><span class="eyebrow">Coverage you can evaluate</span><h2 id="languages-h" class="section-h spaced-heading">14 languages. Different depths of understanding.</h2><p class="section-sub">This table describes symbol extraction foundations. Call resolution, imports, contracts, framework conventions and authored-rationale extraction have separate limits.</p>
+<div class="table-scroll" role="region" aria-label="Language support table" tabindex="0"><table class="coverage-table"><thead><tr><th scope="col">Languages</th><th scope="col">Extraction foundation</th><th scope="col">Evaluate on your code</th></tr></thead><tbody>
+<tr><th scope="row">C#</th><td>Bundled tree-sitter AST grammar</td><td>Static resolution, dependency injection and framework dispatch can differ from runtime behavior.</td></tr>
+<tr><th scope="row">TypeScript · JavaScript</th><td>Bundled tree-sitter AST grammars</td><td>Check dynamic calls, module boundaries and framework-specific conventions.</td></tr>
+<tr><th scope="row">Python</th><td>Bundled tree-sitter AST grammar</td><td>Import-aware resolution has known gaps; check package layouts and dynamic dispatch.</td></tr>
+<tr><th scope="row">Java · Go · Rust · Ruby</th><td>Bundled tree-sitter AST grammars</td><td>Check language-specific call resolution and the frameworks used in your estate.</td></tr>
+<tr><th scope="row">PHP</th><td>Bundled tree-sitter AST grammar</td><td>Trait handling and deeper resolution remain areas of improvement.</td></tr>
+<tr><th scope="row">C · C++</th><td>Bundled tree-sitter AST grammars</td><td>Validate macro-heavy code, include layouts and indirect calls.</td></tr>
+<tr><th scope="row">SQL</th><td>Custom tree-sitter grammar, with ScriptDom for T-SQL analysis</td><td>Dialect and declaration forms affect coverage, including function variants.</td></tr>
+<tr><th scope="row">Kotlin · Swift</th><td>Regex fallback for symbol extraction</td><td>Shallower structural extraction while AST bindings and language support evolve.</td></tr>
+</tbody></table></div><p class="section-note">Use a representative repository and verify source locations, missing symbols and incorrect edges. <a href="/examples.html">The public example shows why those checks matter.</a></p></section>
+<section class="section split-section" id="setup" aria-labelledby="setup-h"><div><span class="eyebrow">Before a pilot</span><h2 id="setup-h">Agree the install<br/>and the evidence.</h2></div><div class="prose"><ol class="reading-steps"><li>Select representative repositories and the history providers to connect.</li><li>Choose deployment and model endpoints; confirm credentials, network access and repository enforcement.</li><li>Use the installation instructions and artifacts for the agreed release. Verify readiness and one allowed / denied access case.</li><li>Record the indexed revision, run the evaluation tasks, and review gaps with the team.</li></ol><p>Request the current release instructions during scoping. The installation and support scope is confirmed in your proposal.</p><a class="text-link" href="/case-study.html#evaluation">Use the evaluation worksheet →</a></div></section><section class="closing-cta"><div><span class="eyebrow">See Engram in context</span><h2>Bring a real codebase question.</h2><p>We’ll use a 30-minute scoping call to understand your repositories, tooling and evaluation goals.</p></div><a class="btn btn-primary" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ03YZjoSkRzZ6Zj6q9sd8sf4mQ4YmHULVEeQg6vgVUbmmpikif88qI9nzSRRGoLaab0dH2Jpx8I">Book a scoping call <span aria-hidden="true">→</span></a></section></main>
+<footer class="footer"><span>© 2026 Pragmatic Coder Ltd</span><nav aria-label="Footer"><a href="/case-study.html">Production &amp; evaluation</a><a href="/roadmap.html">Roadmap</a><a href="/data-handling.html">Website data handling</a><a href="mailto:mitch@pragmaticcoder.com">Contact Mitch</a></nav></footer>
+</div></div>
+<script src="/main.js" defer></script>
+</body></html>
