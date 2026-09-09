@@ -59,6 +59,6 @@ Publish customer outcomes rather than private issue URLs. Keep the twelve-theme 
 
 ## Shared page conventions
 
-Keep primary and footer navigation consistent across pages. Each page has one H1, a distinct title and description, and a canonical URL. Open Graph and Twitter images use absolute production URLs. Update `sitemap.xml` for indexable pages. Enterprise pricing is open-ended, so structured data intentionally omits `highPrice`.
+Keep primary and footer navigation consistent across pages. Each page has one H1, a distinct title and description, and a canonical URL. Open Graph and Twitter images use absolute production URLs. Cloudflare redirects `.html` requests to extensionless production paths, so canonical and Open Graph URLs and `sitemap.xml` use those final paths. Local HTML links retain their filenames for the plain static preview server. Update `sitemap.xml` for indexable pages. Enterprise pricing is open-ended, so structured data intentionally omits `highPrice`.
 
 Fonts load from Google Fonts. The site uses existing brand assets and plain HTML/CSS diagrams; the example layout is a presentation of captured MCP evidence, not an Explore screenshot.
