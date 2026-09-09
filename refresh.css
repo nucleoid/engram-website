@@ -3,7 +3,12 @@ main { position: relative; z-index: 1; }
 [id] { scroll-margin-top: 24px; }
 .btn { letter-spacing: .02em; text-transform: none; font-size: 14px; justify-content: center; text-align: center; }
 .nav-links .nav-demo { font-size: 13px; padding: 9px 16px; }
+.nav-links .nav-demo[aria-current="page"] { color: var(--fg-onCopper); }
 .footer nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.footer-primary { flex-basis: 100%; }
+.footer-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; width: 100%; padding-top: 20px; margin-top: 8px; border-top: 1px solid var(--line-cool); }
+.footer a[aria-current="page"] { color: var(--copper-200); border-bottom-color: var(--copper-300); }
+.nav-logo, .nav-links a { flex-shrink: 0; }
 .nav-logo img { object-fit: contain; }
 .actions { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: center; margin-top: 24px; }
 .lead { font-size: 18px; line-height: 1.65; max-width: 64ch; }

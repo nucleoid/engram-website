@@ -34,7 +34,7 @@ Keep the existing Cloudflare project and production branch. Do not enable GitHub
 
 ## Contact configuration
 
-The booking page is managed in Google Calendar for the Pragmatic Coder account. The website uses a normal link rather than an embedded calendar, so scheduling resources load only when followed. Keep the destination consistent across website CTAs and sales material.
+Header, footer and marketing call-to-action links go to `/demo.html`. That contact page presents email as Mitch’s preferred first step, with the enquiry form and a secondary Google Calendar booking option. Only the explicit “Choose a time on Google Calendar” link goes directly to the appointment schedule. The calendar is managed in the Pragmatic Coder account and is linked rather than embedded, so scheduling resources load only when followed.
 
 Booking URL: https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ03YZjoSkRzZ6Zj6q9sd8sf4mQ4YmHULVEeQg6vgVUbmmpikif88qI9nzSRRGoLaab0dH2Jpx8I
 
@@ -60,6 +60,6 @@ Publish customer outcomes rather than private issue URLs. Keep the twelve-theme 
 
 ## Shared page conventions
 
-Keep primary and footer navigation consistent across pages. Each page has one H1, a distinct title and description, and a canonical URL. Open Graph and Twitter images use absolute production URLs. Cloudflare redirects `.html` requests to extensionless production paths, so canonical and Open Graph URLs and `sitemap.xml` use those final paths. Local HTML links retain their filenames for the plain static preview server. Update `sitemap.xml` for indexable pages. Enterprise pricing is open-ended, so structured data intentionally omits `highPrice`.
+Keep the header and footer product links identical, in the same order, across all pages: Platform, Examples, Deployment, Production & evaluation, Pricing, Roadmap, Book a call. Put Website data handling and Contact Mitch in a separate footer information row. Mark the current page with `aria-current="page"` in each relevant menu. Each page has one H1, a distinct title and description, and a canonical URL. Open Graph and Twitter images use absolute production URLs. Cloudflare redirects `.html` requests to extensionless production paths, so canonical and Open Graph URLs and `sitemap.xml` use those final paths. Local HTML links retain their filenames for the plain static preview server. Update `sitemap.xml` for indexable pages. Enterprise pricing is open-ended, so structured data intentionally omits `highPrice`.
 
 Cloudflare adds email obfuscation/decoding and a Web Analytics beacon at the edge, so served HTML includes those additions. Website data handling describes them. CSS, JavaScript and evidence downloads are served unchanged. Fonts load from Google Fonts. The site uses existing brand assets and plain HTML/CSS diagrams; the example layout is a presentation of captured MCP evidence, not an Explore screenshot.
