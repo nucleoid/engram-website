@@ -250,7 +250,7 @@ pre {
 }
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   align-items: center;
 }
 .nav-links a {
@@ -261,6 +261,9 @@ pre {
   border-bottom: 1px solid transparent;
 }
 .nav-links a:hover { color: var(--fg-0); border-bottom-color: var(--line-firm); }
+.nav-links a[aria-current="page"] { color: var(--copper-200); border-bottom-color: var(--copper-300); }
+.nav-links .nav-demo { padding: 8px 14px; font-size: 11px; }
+.nav-links .btn-primary { color: var(--fg-onCopper); }
 .nav-toggle {
   display: none;
   background: transparent;
@@ -270,7 +273,7 @@ pre {
   color: var(--fg-0);
   cursor: pointer;
 }
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
   .nav-links {
     position: absolute;
     top: 100%; right: 24px; left: 24px;
@@ -740,6 +743,8 @@ pre {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
   padding: 24px 0;
   border-top: 1px solid var(--line-cool);
   margin-top: 48px;
@@ -1085,6 +1090,16 @@ pre {
 }
 @media (prefers-reduced-motion: reduce) {
   .ops-pill-dot { animation: none; }
+}
+
+/* ── Homepage roadmap preview ──────────────────────────────────────── */
+.roadmap-preview { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 32px; border: 1px solid var(--line-firm); border-radius: var(--r-lg); background: var(--bg-1); }
+.roadmap-preview h2 { margin: 12px 0; }
+.roadmap-preview p { max-width: 700px; font-size: 15px; line-height: 1.65; }
+.roadmap-preview .btn { flex-shrink: 0; }
+@media (max-width: 1000px) {
+  .roadmap-preview { flex-direction: column; align-items: flex-start; padding: 24px; }
+  .roadmap-preview .btn { max-width: 100%; }
 }
 
 /* ── Diagram-specific animations ───────────────────────────────────── */

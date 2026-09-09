@@ -1,0 +1,940 @@
+{
+  "provenance": {
+    "repo": "engram-example-catalog",
+    "sourceUrl": "https://github.com/nucleoid/engram-example-catalog",
+    "sourceRevision": "c333c003e7b2b45dfdbf1f9ca7436de6ea47aa3f",
+    "capturedOn": "2026-09-09",
+    "indexedAt": "2026-07-14T21:17:54.4226535Z",
+    "indexVersion": 1,
+    "notes": [
+      "Captured from Engram MCP, not a benchmark or a live feed.",
+      "Source revision verified against the public repository and retained commit evidence.",
+      "Review and trace outputs are complete captured responses, including their own budget and coverage flags.",
+      "File context omits optional ownership data. Onboarding is an excerpt: README, outline, modules and representative flows only. Cross-repository contract aggregation is excluded.",
+      "Static name resolution can misattribute calls. The website displays a selected path checked against source; confidence values describe resolver evidence, not probabilities of correctness."
+    ]
+  },
+  "calls": {
+    "change_impact": {
+      "arguments": {
+        "repo": "engram-example-catalog",
+        "changed_files": "src/Services/BookRepository.cs",
+        "view": "review"
+      },
+      "response": {
+        "repo": "engram-example-catalog",
+        "filesSubmitted": 1,
+        "filesAnalysed": 1,
+        "inputTruncated": false,
+        "budgetTruncated": true,
+        "blastRadius": "9 symbol(s) across 2 communities (src/Services, src/Services); 3 structural hub(s) touched",
+        "changeImpact": {
+          "filesSubmitted": 1,
+          "filesAnalysed": 1,
+          "inputTruncated": false,
+          "repoIndexed": true,
+          "communitiesDetected": true,
+          "nodesAffected": 9,
+          "communitiesTouched": [
+            {
+              "communityId": 0,
+              "label": "src/Services",
+              "symbolCount": 4
+            },
+            {
+              "communityId": 1,
+              "label": "src/Services",
+              "symbolCount": 1
+            }
+          ],
+          "godNodesAffected": [
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.FindById#method",
+              "name": "FindById",
+              "kind": "method",
+              "file": "src/Services/BookRepository.cs",
+              "inDegree": 3,
+              "outDegree": 0,
+              "totalDegree": 3
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.Remove#method",
+              "name": "Remove",
+              "kind": "method",
+              "file": "src/Services/BookRepository.cs",
+              "inDegree": 1,
+              "outDegree": 2,
+              "totalDegree": 3
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.Add#method",
+              "name": "Add",
+              "kind": "method",
+              "file": "src/Services/BookRepository.cs",
+              "inDegree": 1,
+              "outDegree": 1,
+              "totalDegree": 2
+            }
+          ],
+          "matchedFiles": [
+            "src/Services/BookRepository.cs"
+          ],
+          "unmatchedFiles": []
+        },
+        "hotSymbols": [
+          {
+            "symbolId": "src/Services/BookRepository.cs::BookRepository.Add#method",
+            "name": "Add",
+            "kind": "method",
+            "language": "csharp",
+            "file": "src/Services/BookRepository.cs",
+            "structuralDegree": 6,
+            "transitiveCallers": [
+              {
+                "symbolId": "src/Controllers/AuthorsController.cs::AuthorsController.Create#method",
+                "name": "Create",
+                "kind": "method",
+                "file": "src/Controllers/AuthorsController.cs",
+                "depth": 1
+              },
+              {
+                "symbolId": "src/Services/BookService.cs::BookService.Create#method",
+                "name": "Create",
+                "kind": "method",
+                "file": "src/Services/BookService.cs",
+                "depth": 1
+              },
+              {
+                "symbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+                "name": "Borrow",
+                "kind": "method",
+                "file": "src/Services/LoanService.cs",
+                "depth": 1
+              },
+              {
+                "symbolId": "src/Services/MemberService.cs::MemberService.Register#method",
+                "name": "Register",
+                "kind": "method",
+                "file": "src/Services/MemberService.cs",
+                "depth": 1
+              },
+              {
+                "symbolId": "route:POST:/api/authors",
+                "name": "POST /api/authors",
+                "kind": "route",
+                "file": "src/Controllers/AuthorsController.cs",
+                "depth": 2
+              }
+            ],
+            "maxDepth": 2,
+            "truncated": false
+          },
+          {
+            "symbolId": "src/Services/BookRepository.cs::BookRepository.FindById#method",
+            "name": "FindById",
+            "kind": "method",
+            "language": "csharp",
+            "file": "src/Services/BookRepository.cs",
+            "structuralDegree": 4,
+            "transitiveCallers": [
+              {
+                "symbolId": "src/Services/BookRepository.cs::BookRepository.AdjustAvailability#method",
+                "name": "AdjustAvailability",
+                "kind": "method",
+                "file": "src/Services/BookRepository.cs",
+                "depth": 1
+              },
+              {
+                "symbolId": "src/Services/BookRepository.cs::BookRepository.Remove#method",
+                "name": "Remove",
+                "kind": "method",
+                "file": "src/Services/BookRepository.cs",
+                "depth": 1
+              },
+              {
+                "symbolId": "src/Services/BookRepository.cs::BookRepository.Update#method",
+                "name": "Update",
+                "kind": "method",
+                "file": "src/Services/BookRepository.cs",
+                "depth": 1
+              },
+              {
+                "symbolId": "src/Services/LoanService.cs::LoanService.Return#method",
+                "name": "Return",
+                "kind": "method",
+                "file": "src/Services/LoanService.cs",
+                "depth": 2
+              }
+            ],
+            "maxDepth": 2,
+            "truncated": false
+          },
+          {
+            "symbolId": "src/Services/BookRepository.cs::BookRepository.AdjustAvailability#method",
+            "name": "AdjustAvailability",
+            "kind": "method",
+            "language": "csharp",
+            "file": "src/Services/BookRepository.cs",
+            "structuralDegree": 3,
+            "transitiveCallers": [],
+            "maxDepth": 2,
+            "truncated": false
+          }
+        ],
+        "priorReviews": [],
+        "linkedWorkItems": [],
+        "contractCrossings": [],
+        "conventionExemplars": [
+          {
+            "repo": "engram-example-catalog",
+            "file": "src/Legacy/ILegacyCatalogService.cs",
+            "symbolId": "chunk_72315",
+            "name": "chunk_72315",
+            "kind": "unknown",
+            "language": "unknown",
+            "score": 0.3279120947734057,
+            "preview": ""
+          }
+        ],
+        "sections": {
+          "structuralImpact": {
+            "available": true,
+            "total": 9,
+            "returned": 9,
+            "truncated": false,
+            "warning": null
+          },
+          "priorReviews": {
+            "available": true,
+            "total": 0,
+            "returned": 0,
+            "truncated": false,
+            "warning": null
+          },
+          "linkedWorkItems": {
+            "available": true,
+            "total": 0,
+            "returned": 0,
+            "truncated": false,
+            "warning": null
+          },
+          "contractCrossings": {
+            "available": true,
+            "total": 0,
+            "returned": 0,
+            "truncated": false,
+            "warning": null
+          },
+          "conventionExemplars": {
+            "available": true,
+            "total": 4,
+            "returned": 1,
+            "truncated": true,
+            "warning": null
+          }
+        },
+        "warnings": [],
+        "testReachability": {
+          "untestedSymbols": [
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository#class",
+              "name": "BookRepository",
+              "file": "src/Services/BookRepository.cs",
+              "note": "No indexed test path found within depth 2; the bounded search completed. This is not proof that no test exists.",
+              "searchComplete": true,
+              "incompleteReasons": []
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.Add#method",
+              "name": "Add",
+              "file": "src/Services/BookRepository.cs",
+              "note": "Test-reachability search for this symbol was cut off by traversal budget before completing; reachability is UNKNOWN — do not treat as evidence of missing tests.",
+              "searchComplete": false,
+              "incompleteReasons": [
+                "Reverse traversal bounded at depth 2."
+              ]
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.AdjustAvailability#method",
+              "name": "AdjustAvailability",
+              "file": "src/Services/BookRepository.cs",
+              "note": "No indexed test path found within depth 2; the bounded search completed. This is not proof that no test exists.",
+              "searchComplete": true,
+              "incompleteReasons": []
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.FindAll#method",
+              "name": "FindAll",
+              "file": "src/Services/BookRepository.cs",
+              "note": "No indexed test path found within depth 2; the bounded search completed. This is not proof that no test exists.",
+              "searchComplete": true,
+              "incompleteReasons": []
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.FindByAuthor#method",
+              "name": "FindByAuthor",
+              "file": "src/Services/BookRepository.cs",
+              "note": "No indexed test path found within depth 2; the bounded search completed. This is not proof that no test exists.",
+              "searchComplete": true,
+              "incompleteReasons": []
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.FindById#method",
+              "name": "FindById",
+              "file": "src/Services/BookRepository.cs",
+              "note": "Test-reachability search for this symbol was cut off by traversal budget before completing; reachability is UNKNOWN — do not treat as evidence of missing tests.",
+              "searchComplete": false,
+              "incompleteReasons": [
+                "Reverse traversal bounded at depth 2."
+              ]
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.Remove#method",
+              "name": "Remove",
+              "file": "src/Services/BookRepository.cs",
+              "note": "No indexed test path found within depth 2; the bounded search completed. This is not proof that no test exists.",
+              "searchComplete": true,
+              "incompleteReasons": []
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.SearchByTitle#method",
+              "name": "SearchByTitle",
+              "file": "src/Services/BookRepository.cs",
+              "note": "No indexed test path found within depth 2; the bounded search completed. This is not proof that no test exists.",
+              "searchComplete": true,
+              "incompleteReasons": []
+            },
+            {
+              "symbolId": "src/Services/BookRepository.cs::BookRepository.Update#method",
+              "name": "Update",
+              "file": "src/Services/BookRepository.cs",
+              "note": "No indexed test path found within depth 2; the bounded search completed. This is not proof that no test exists.",
+              "searchComplete": true,
+              "incompleteReasons": []
+            }
+          ],
+          "total": 9,
+          "returned": 9,
+          "truncated": true,
+          "complete": false,
+          "provisional": false,
+          "incompleteReasons": [
+            "Reverse traversal bounded at depth 2."
+          ],
+          "skippedSymbolCount": 0
+        }
+      }
+    },
+    "trace_flow": {
+      "arguments": {
+        "repo": "engram-example-catalog",
+        "symbol_id": "src/Services/LoanService.cs::LoanService.Borrow#method",
+        "max_depth": 2,
+        "max_response_chars": 16000,
+        "cross_repo": false
+      },
+      "response": {
+        "entrySymbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+        "repo": "engram-example-catalog",
+        "requestedName": "engram-example-catalog",
+        "dataRepo": "engram-example-catalog",
+        "maxDepth": 2,
+        "nodeCount": 8,
+        "edgeCount": 9,
+        "nodes": [
+          {
+            "symbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+            "name": "Borrow",
+            "file": "src/Services/LoanService.cs",
+            "kind": "method",
+            "depth": 0
+          },
+          {
+            "symbolId": "src/Models/Book.cs::Book.IsAvailable#method",
+            "name": "IsAvailable",
+            "file": "src/Models/Book.cs",
+            "kind": "method",
+            "depth": 1
+          },
+          {
+            "symbolId": "src/Models/Loan.cs::Loan#class",
+            "name": "Loan",
+            "file": "src/Models/Loan.cs",
+            "kind": "class",
+            "depth": 1
+          },
+          {
+            "symbolId": "src/Models/Member.cs::Member.CanBorrow#method",
+            "name": "CanBorrow",
+            "file": "src/Models/Member.cs",
+            "kind": "method",
+            "depth": 1
+          },
+          {
+            "symbolId": "src/Services/BookRepository.cs::BookRepository.Add#method",
+            "name": "Add",
+            "file": "src/Services/BookRepository.cs",
+            "kind": "method",
+            "depth": 1
+          },
+          {
+            "symbolId": "src/Services/BookRepository.cs::BookRepository.AdjustAvailability#method",
+            "name": "AdjustAvailability",
+            "file": "src/Services/BookRepository.cs",
+            "kind": "method",
+            "depth": 1
+          },
+          {
+            "symbolId": "src/Services/BookRepository.cs::BookRepository.FindById#method",
+            "name": "FindById",
+            "file": "src/Services/BookRepository.cs",
+            "kind": "method",
+            "depth": 1
+          },
+          {
+            "symbolId": "src/Services/LoanService.cs::LoanService.Get#method",
+            "name": "Get",
+            "file": "src/Services/LoanService.cs",
+            "kind": "method",
+            "depth": 1
+          }
+        ],
+        "edges": [
+          {
+            "callerSymbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+            "calleeSymbolId": "src/Models/Book.cs::Book.IsAvailable#method",
+            "edgeType": "calls",
+            "provenance": "unique_name",
+            "confidence": 0.6
+          },
+          {
+            "callerSymbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+            "calleeSymbolId": "src/Models/Loan.cs::Loan#class",
+            "edgeType": "calls",
+            "provenance": "ctor",
+            "confidence": 1
+          },
+          {
+            "callerSymbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+            "calleeSymbolId": "src/Models/Member.cs::Member.CanBorrow#method",
+            "edgeType": "calls",
+            "provenance": "unique_name",
+            "confidence": 0.6
+          },
+          {
+            "callerSymbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+            "calleeSymbolId": "src/Services/BookRepository.cs::BookRepository.Add#method",
+            "edgeType": "calls",
+            "provenance": "unique_name",
+            "confidence": 0.6
+          },
+          {
+            "callerSymbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+            "calleeSymbolId": "src/Services/BookRepository.cs::BookRepository.AdjustAvailability#method",
+            "edgeType": "calls",
+            "provenance": "unique_name",
+            "confidence": 0.6
+          },
+          {
+            "callerSymbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+            "calleeSymbolId": "src/Services/BookRepository.cs::BookRepository.FindById#method",
+            "edgeType": "calls",
+            "provenance": "unique_name",
+            "confidence": 0.6
+          },
+          {
+            "callerSymbolId": "src/Services/LoanService.cs::LoanService.Borrow#method",
+            "calleeSymbolId": "src/Services/LoanService.cs::LoanService.Get#method",
+            "edgeType": "calls",
+            "provenance": "same_file",
+            "confidence": 0.95
+          },
+          {
+            "callerSymbolId": "src/Services/BookRepository.cs::BookRepository.Add#method",
+            "calleeSymbolId": "src/Services/BookRepository.cs::BookRepository.Add#method",
+            "edgeType": "calls",
+            "provenance": "same_file",
+            "confidence": 0.95
+          },
+          {
+            "callerSymbolId": "src/Services/BookRepository.cs::BookRepository.AdjustAvailability#method",
+            "calleeSymbolId": "src/Services/BookRepository.cs::BookRepository.FindById#method",
+            "edgeType": "calls",
+            "provenance": "same_file",
+            "confidence": 0.95
+          }
+        ],
+        "truncated": false,
+        "returnedNodeCount": 8,
+        "returnedEdgeCount": 9
+      }
+    },
+    "get_file_context": {
+      "arguments": {
+        "repo": "engram-example-catalog",
+        "file_path": "src/Services/BookRepository.cs"
+      },
+      "responseExcerpt": {
+        "filePath": "src/Services/BookRepository.cs",
+        "linkedWorkItemIds": [],
+        "commitHistoryWindow": {
+          "availability": "available",
+          "ingestedCommitCount": 1,
+          "timestampedCommitCount": 1,
+          "historyFloor": "2026-05-24T05:56:42+00:00",
+          "historyCeiling": "2026-05-24T05:56:42+00:00",
+          "note": "Commit-derived evidence covers only ingested commits; a file older than historyFloor has none by window boundary, not by absence."
+        },
+        "rationaleSupport": "supported",
+        "decisionHistory": {
+          "repoScope": "engram-example-catalog",
+          "commits": {
+            "items": [
+              {
+                "citationId": "commit:engram-example-catalog:c333c003e7b2b45dfdbf1f9ca7436de6ea47aa3f",
+                "hash": "c333c003e7b2b45dfdbf1f9ca7436de6ea47aa3f",
+                "repo": "engram-example-catalog",
+                "author": "Mitch Statz",
+                "message": "Initial catalog API skeleton",
+                "date": "2026-05-24T05:56:42+00:00",
+                "linkedWorkItemCitations": [],
+                "scope": "file"
+              }
+            ],
+            "availableCount": 1,
+            "returnedCount": 1,
+            "truncated": false,
+            "scope": "file",
+            "incompleteReason": null
+          },
+          "workItems": {
+            "items": [],
+            "availableCount": 0,
+            "returnedCount": 0,
+            "truncated": false,
+            "scope": "file",
+            "incompleteReason": null
+          },
+          "relatedWorkItems": {
+            "items": [],
+            "availableCount": 0,
+            "returnedCount": 0,
+            "truncated": false,
+            "scope": "file",
+            "incompleteReason": null
+          },
+          "reviews": {
+            "items": [],
+            "availableCount": 0,
+            "returnedCount": 0,
+            "truncated": false,
+            "scope": "file",
+            "incompleteReason": null
+          },
+          "sourceRationale": {
+            "items": [],
+            "availableCount": 0,
+            "returnedCount": 0,
+            "truncated": false,
+            "scope": "file",
+            "incompleteReason": null
+          },
+          "caveat": "Commit, work-item, relation, and file-level review evidence does not prove line or symbol causality. Source-rationale symbol scope reflects deterministic AST containment only."
+        }
+      }
+    },
+    "brief_repo": {
+      "arguments": {
+        "repo": "engram-example-catalog",
+        "view": "onboarding"
+      },
+      "responseExcerpt": {
+        "repo": "engram-example-catalog",
+        "indexedAt": "2026-07-14T21:17:54.4226535Z",
+        "indexVersion": 1,
+        "readme": "# Library Catalog\n\nA small example library catalog API. Books, authors, members, loans.\n\nA deliberately tiny CRUD project — useful as a sample target for indexers, static analysers, and code-navigation tooling that want a multi-language repo to chew on without the noise of a real production codebase.\n\n## Layout\n\n- `src/` — ASP.NET Core Web API (controllers, services, repositories, models, a legacy WCF contract).\n- `sql/` — A couple of stored procedures.\n- `frontend/` — A thin TypeScript client and one TSX component.\n- `scripts/` — A Python seed script.\n\n## Run\n\n```\ndotnet run --project Catalog.csproj\n```\n\nThe repo doesn't ship with a real database — the `BookRepository` returns in-memory data. Wire it to your own provider if you want persistence.\n\n## License\n\nMIT.\n",
+        "outline": {
+          "repo": "engram-example-catalog",
+          "languages": {
+            "sql": 2,
+            "csharp": 98,
+            "python": 6,
+            "typescript": 13
+          },
+          "fileCount": 19,
+          "symbolCountByKind": {
+            "interface": 5,
+            "function": 8,
+            "class": 14,
+            "method": 53,
+            "route": 10,
+            "constant": 28,
+            "type": 1
+          },
+          "topLevelSymbols": [
+            {
+              "name": "BookCardProps",
+              "kind": "interface",
+              "file": "frontend/book-card.tsx"
+            },
+            {
+              "name": "BookCard",
+              "kind": "function",
+              "file": "frontend/book-card.tsx"
+            },
+            {
+              "name": "sp_RecordLoan",
+              "kind": "function",
+              "file": "sql/sp_RecordLoan.sql"
+            },
+            {
+              "name": "HealthController",
+              "kind": "class",
+              "file": "src/Controllers/HealthController.cs"
+            },
+            {
+              "name": "Author",
+              "kind": "class",
+              "file": "src/Models/Author.cs"
+            },
+            {
+              "name": "AuthorSeed",
+              "kind": "class",
+              "file": "scripts/seed_catalog.py"
+            },
+            {
+              "name": "BookSeed",
+              "kind": "class",
+              "file": "scripts/seed_catalog.py"
+            },
+            {
+              "name": "post_json",
+              "kind": "function",
+              "file": "scripts/seed_catalog.py"
+            },
+            {
+              "name": "seed_authors",
+              "kind": "function",
+              "file": "scripts/seed_catalog.py"
+            },
+            {
+              "name": "seed_books",
+              "kind": "function",
+              "file": "scripts/seed_catalog.py"
+            },
+            {
+              "name": "main",
+              "kind": "function",
+              "file": "scripts/seed_catalog.py"
+            },
+            {
+              "name": "sp_GetBooksByAuthor",
+              "kind": "function",
+              "file": "sql/sp_GetBooksByAuthor.sql"
+            },
+            {
+              "name": "ILegacyCatalogService",
+              "kind": "interface",
+              "file": "src/Legacy/ILegacyCatalogService.cs"
+            },
+            {
+              "name": "Book",
+              "kind": "interface",
+              "file": "frontend/catalog-client.ts"
+            },
+            {
+              "name": "Author",
+              "kind": "interface",
+              "file": "frontend/catalog-client.ts"
+            },
+            {
+              "name": "CatalogClientOptions",
+              "kind": "interface",
+              "file": "frontend/catalog-client.ts"
+            },
+            {
+              "name": "CatalogClient",
+              "kind": "class",
+              "file": "frontend/catalog-client.ts"
+            },
+            {
+              "name": "formatBookSummary",
+              "kind": "function",
+              "file": "frontend/catalog-client.ts"
+            },
+            {
+              "name": "AuthorsController",
+              "kind": "class",
+              "file": "src/Controllers/AuthorsController.cs"
+            },
+            {
+              "name": "BooksController",
+              "kind": "class",
+              "file": "src/Controllers/BooksController.cs"
+            },
+            {
+              "name": "Book",
+              "kind": "class",
+              "file": "src/Models/Book.cs"
+            },
+            {
+              "name": "BookRepository",
+              "kind": "class",
+              "file": "src/Services/BookRepository.cs"
+            },
+            {
+              "name": "Loan",
+              "kind": "class",
+              "file": "src/Models/Loan.cs"
+            },
+            {
+              "name": "Member",
+              "kind": "class",
+              "file": "src/Models/Member.cs"
+            },
+            {
+              "name": "MemberStatus",
+              "kind": "type",
+              "file": "src/Models/Member.cs"
+            },
+            {
+              "name": "LoanService",
+              "kind": "class",
+              "file": "src/Services/LoanService.cs"
+            },
+            {
+              "name": "MemberService",
+              "kind": "class",
+              "file": "src/Services/MemberService.cs"
+            },
+            {
+              "name": "BookService",
+              "kind": "class",
+              "file": "src/Services/BookService.cs"
+            }
+          ],
+          "topLevelSymbolsTotalCount": 28
+        },
+        "modules": [
+          {
+            "key": "module_briefing__src_controllers",
+            "symbolCount": 20,
+            "primaryDirectory": "src/Controllers",
+            "directories": [
+              "src/Controllers",
+              "src/Services"
+            ],
+            "entryPoints": [
+              {
+                "name": "Create",
+                "kind": "method",
+                "callerCount": 2
+              },
+              {
+                "name": "Delete",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "Get",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "List",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "ListAll",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "Live",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "Ready",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "Search",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "Update",
+                "kind": "method",
+                "callerCount": 1
+              }
+            ],
+            "versionHash": "ecbec2b3c632bd1f",
+            "compiledAt": "2026-07-11T10:35:17.864995Z"
+          },
+          {
+            "key": "module_briefing__src_services",
+            "symbolCount": 16,
+            "primaryDirectory": "src/Services",
+            "directories": [
+              "src/Controllers",
+              "src/Models",
+              "src/Services"
+            ],
+            "entryPoints": [
+              {
+                "name": "Add",
+                "kind": "method",
+                "callerCount": 6
+              },
+              {
+                "name": "FindById",
+                "kind": "method",
+                "callerCount": 4
+              },
+              {
+                "name": "Get",
+                "kind": "method",
+                "callerCount": 3
+              },
+              {
+                "name": "AdjustAvailability",
+                "kind": "method",
+                "callerCount": 2
+              },
+              {
+                "name": "Create",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "FindByEmail",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "IsClosed",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "Remove",
+                "kind": "method",
+                "callerCount": 1
+              }
+            ],
+            "versionHash": "56e3912334da14e6",
+            "compiledAt": "2026-07-11T10:35:17.843839Z"
+          },
+          {
+            "key": "module_briefing__src_models",
+            "symbolCount": 5,
+            "primaryDirectory": "src/Models",
+            "directories": [
+              "src/Models",
+              "src/Services"
+            ],
+            "entryPoints": [
+              {
+                "name": "CanBorrow",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "IsAvailable",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "IsOverdue",
+                "kind": "method",
+                "callerCount": 1
+              },
+              {
+                "name": "Loan",
+                "kind": "class",
+                "callerCount": 1
+              }
+            ],
+            "versionHash": "4da83cea5d826680",
+            "compiledAt": "2026-07-11T10:35:17.881212Z"
+          },
+          {
+            "key": "module_briefing__frontend",
+            "symbolCount": 3,
+            "primaryDirectory": "frontend",
+            "directories": [
+              "frontend"
+            ],
+            "entryPoints": [
+              {
+                "name": "getJson",
+                "kind": "method",
+                "callerCount": 2
+              }
+            ],
+            "versionHash": "1a26fd0974ce1c3d",
+            "compiledAt": "2026-07-11T10:35:17.868578Z"
+          },
+          {
+            "key": "module_briefing__scripts",
+            "symbolCount": 3,
+            "primaryDirectory": "scripts",
+            "directories": [
+              "scripts"
+            ],
+            "entryPoints": [
+              {
+                "name": "post_json",
+                "kind": "function",
+                "callerCount": 2
+              }
+            ],
+            "versionHash": "3deb3e6a2e3a5bbc",
+            "compiledAt": "2026-07-11T10:35:17.872152Z"
+          }
+        ],
+        "flows": [
+          {
+            "entrySymbolId": "route:GET:/api/authors",
+            "name": "GET /api/authors",
+            "scope": "src/Controllers",
+            "nodes": [
+              {
+                "id": "route:GET:/api/authors",
+                "label": "GET /api/authors",
+                "kind": "route",
+                "depth": 0
+              },
+              {
+                "id": "src/Controllers/AuthorsController.cs::AuthorsController.List#method",
+                "label": "List",
+                "kind": "method",
+                "depth": 1
+              }
+            ],
+            "edges": [
+              {
+                "sourceId": "route:GET:/api/authors",
+                "targetId": "src/Controllers/AuthorsController.cs::AuthorsController.List#method",
+                "label": "calls"
+              }
+            ],
+            "truncated": false,
+            "omittedNodes": 0,
+            "omittedEdges": 0
+          }
+        ],
+        "truncation": {
+          "truncated": false,
+          "omittedModules": 0,
+          "omittedFlows": 0,
+          "omittedContracts": 0,
+          "markdownTruncated": false
+        }
+      }
+    }
+  }
+}

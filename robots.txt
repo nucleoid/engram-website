@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /demo.html
 
 Sitemap: https://engram.pragmaticcoder.com/sitemap.xml

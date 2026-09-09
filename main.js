@@ -2,19 +2,32 @@
 (function () {
   'use strict';
 
+  document.documentElement.classList.add('js');
+
   // ── Mobile nav toggle ────────────────────────────────────────────
   var toggle = document.querySelector('.nav-toggle');
   var links = document.querySelector('.nav-links');
   if (toggle && links) {
+    function closeMenu(returnFocus) {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      if (returnFocus) toggle.focus();
+    }
     toggle.addEventListener('click', function () {
       var open = links.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     links.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') {
-        links.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
+      if (e.target.closest('a')) closeMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && links.classList.contains('is-open')) closeMenu(true);
+    });
+    document.addEventListener('click', function (e) {
+      if (!links.contains(e.target) && !toggle.contains(e.target)) closeMenu(false);
+    });
+    window.matchMedia('(max-width: 1000px)').addEventListener('change', function () {
+      closeMenu(false);
     });
   }
 

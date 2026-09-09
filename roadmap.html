@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Product Roadmap: Engram</title>
+<meta name="description" content="Explore Engram's direction: more dependable codebase context, easier adoption, richer pull-request evidence, and future capabilities under evaluation."/>
+<meta name="theme-color" content="#0B0907"/>
+<link rel="canonical" href="https://engram.pragmaticcoder.com/roadmap.html"/>
+<link rel="icon" type="image/png" href="assets/logo-mark.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://engram.pragmaticcoder.com/roadmap.html"/>
+<meta property="og:title" content="Product Roadmap: Engram"/>
+<meta property="og:description" content="More dependable context. Easier adoption. Better evidence where engineering decisions happen."/>
+<meta property="og:image" content="https://engram.pragmaticcoder.com/assets/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Product Roadmap: Engram"/>
+<meta name="twitter:description" content="Explore Engram's product priorities, planned extensions, and ideas under evaluation."/>
+<meta name="twitter:image" content="https://engram.pragmaticcoder.com/assets/og-image.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="refresh.css"/>
+<link rel="stylesheet" href="roadmap.css"/>
+</head>
+<body>
+<a href="#main" class="skip">Skip to main content</a>
+<div class="page">
+  <div class="bg-atmos" aria-hidden="true"></div>
+  <div class="container">
+    <header><nav class="nav" aria-label="Primary">
+<a href="/" class="nav-logo" aria-label="Engram home"><img src="/assets/logo-mark.png" width="32" height="32" alt=""/><span>Engram</span></a>
+<button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+<div class="nav-links" id="nav-links"><a href="/platform.html">Platform</a>
+<a href="/examples.html">Examples</a>
+<a href="/deployment.html">Deployment</a>
+<a href="/index.html#pricing">Pricing</a>
+<a href="/roadmap.html" aria-current="page">Roadmap</a><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ03YZjoSkRzZ6Zj6q9sd8sf4mQ4YmHULVEeQg6vgVUbmmpikif88qI9nzSRRGoLaab0dH2Jpx8I" class="btn btn-primary nav-demo">Book a call</a></div>
+</nav></header>
+
+    <main id="main" class="roadmap-page">
+      <section class="roadmap-intro" aria-labelledby="roadmap-h">
+        <span class="eyebrow">Product roadmap</span>
+        <h1 id="roadmap-h">Where Engram<br/>goes next.</h1>
+        <p class="roadmap-lead">More dependable context. Easier adoption.<br/> Better evidence where engineering decisions happen.</p>
+        <p class="roadmap-note">This is our proposed direction, drawn from the product backlog. Themes are grouped by readiness, not delivery order. Scope and priorities may change; planned and exploratory capabilities are not delivery commitments.</p>
+        <nav class="roadmap-jump" aria-label="Roadmap sections">
+          <a href="#improvements">Core improvements <span aria-hidden="true">↘</span></a>
+          <a href="#planned">Planned extensions <span aria-hidden="true">↘</span></a>
+          <a href="#exploring">Exploring <span aria-hidden="true">↘</span></a>
+        </nav>
+      </section>
+
+      <aside class="roadmap-baseline" aria-labelledby="baseline-h">
+        <div>
+          <span class="eyebrow">The foundation</span>
+          <h2 id="baseline-h">Already in Engram</h2>
+        </div>
+        <div>
+          <p>Structural and semantic search, call and contract graphs, review context, repository onboarding, retained decision history, and shareable HTML graph reports.</p>
+          <p class="roadmap-note">GitHub PR annotations and repository authorization are implemented and require configuration. Feature availability depends on your release and enabled options.</p>
+          <a href="/platform.html">Explore the current platform <span aria-hidden="true">→</span></a>
+        </div>
+      </aside>
+
+      <section class="roadmap-lane" id="improvements" aria-labelledby="improvements-h">
+        <div class="roadmap-lane-heading">
+          <span class="roadmap-status">Open improvements</span>
+          <h2 id="improvements-h">Strengthen<br/> the essentials.</h2>
+          <p>Make everyday answers more dependable and the path to a working installation more direct.</p>
+        </div>
+        <div class="roadmap-cards">
+          <article class="roadmap-card">
+            <span class="roadmap-category">Trust in the answer</span>
+            <h3>Clearer search coverage</h3>
+            <p>Show when a search covers only part of the corpus, improve representation across repositories, and clarify how disabled repositories affect results.</p>
+            <p class="roadmap-detail">Preserve work-item provider identity and useful links when individual source records cannot be read.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="roadmap-category">Freshness &amp; performance</span>
+            <h3>Less repeated work. More visible failure.</h3>
+            <p>Extend incremental graph processing across indexing paths and make sustained drift and repeated indexing failures visible at repository level.</p>
+            <p class="roadmap-detail">Build on the hosted-Git graph improvements already in the codebase, with clearer configuration and recovery signals.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="roadmap-category">Getting started</span>
+            <h3>An easier evaluation path</h3>
+            <p>Publish the CLI package, simplify access to release images, make compiled reports easier to find, and help AI clients recognise when to use Engram.</p>
+            <p class="roadmap-detail">Public image distribution still needs a commercial decision. A guided demo remains the current starting point.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="roadmap-category">Enterprise installation</span>
+            <h3>Fit the infrastructure you already run</h3>
+            <p>Make Helm installations more adaptable to existing secret managers, workload identities, and optional Redis or Ollama services.</p>
+            <p class="roadmap-detail">Add a reusable post-upgrade check that verifies retrieval as well as service health.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="roadmap-lane" id="planned" aria-labelledby="planned-h">
+        <div class="roadmap-lane-heading">
+          <span class="roadmap-status roadmap-status-planned">Planned extensions</span>
+          <h2 id="planned-h">Bring evidence<br/> to the decision.</h2>
+          <p>Open feature work with dependencies, validation, or rollout decisions still to resolve.</p>
+        </div>
+        <div class="roadmap-cards">
+          <article class="roadmap-card">
+            <span class="roadmap-category">Pull-request workflows</span>
+            <h3>Review context across more providers</h3>
+            <p>Extend the GitHub annotation foundation to Azure DevOps, GitLab, and Bitbucket, with an optional informational GitHub check.</p>
+            <p class="roadmap-detail">Each integration remains separately opt-in. Strengthen delivery recovery and make annotation coverage clearer.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="roadmap-category">Contract evolution</span>
+            <h3>Surface contract warnings before merge</h3>
+            <p>Bring Contract Sentinel evidence into PR review so teams can inspect a changed API surface against its indexed baseline.</p>
+            <p class="roadmap-detail">Extend the existing post-index capability. Report what extraction supports, with explicit limits when evidence is incomplete.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="roadmap-category">Release confidence</span>
+            <h3>Prove the upgrade and recovery path</h3>
+            <p>Add previous-release compatibility checks, data-preserving Compose upgrade tests, and an executable upgrade and rollback guide.</p>
+            <p class="roadmap-detail">Optional update notices and customer release access remain dependent on distribution and operating decisions.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="roadmap-category">Operator visibility</span>
+            <h3>Local usage and audit evidence</h3>
+            <p>Develop local usage attribution, report-only seat and renewal views, and exportable evidence of repository access and indexing triggers.</p>
+            <p class="roadmap-detail">Respect repository scope and human versus service identities. Audit exports support a review process; they do not imply certification.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="roadmap-lane" id="exploring" aria-labelledby="exploring-h">
+        <div class="roadmap-lane-heading">
+          <span class="roadmap-status roadmap-status-exploring">Exploring · deferred</span>
+          <h2 id="exploring-h">Follow the evidence<br/> further.</h2>
+          <p>Demand-led ideas that need more evidence or a separate design decision before implementation.</p>
+        </div>
+        <div class="roadmap-cards">
+          <article class="roadmap-card">
+            <span class="roadmap-category">Restricted networks</span>
+            <h3>Reproducible offline distribution</h3>
+            <p>Evaluate complete air-gap bundles and additional release channels when customer network restrictions or rollout needs justify them.</p>
+            <p class="roadmap-detail">Self-hosting and offline license verification exist today. A complete offline installation bundle is separate future work.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="roadmap-category">Language depth</span>
+            <h3>Richer structure where teams need it</h3>
+            <p>Extend Kotlin and Swift parsing, Python import resolution, and selected PHP and SQL relationships as real codebases demonstrate the need.</p>
+            <p class="roadmap-detail">These deepen existing language support; extraction coverage varies by language and framework.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="roadmap-category">Assisted maintenance</span>
+            <h3>Human-reviewed refactor drafts</h3>
+            <p>Explore turning validated technical-debt findings into bounded draft changes after the issue-filing phase establishes a reliable record.</p>
+            <p class="roadmap-detail">Separate approval, testing, and rollback controls are prerequisites. Autonomous approval or merging is outside this direction.</p>
+          </article>
+          <article class="roadmap-card">
+            <span class="roadmap-category">Deployment models</span>
+            <h3>Isolation for separate tenants</h3>
+            <p>Evaluate partitioning data, jobs, credentials, and caches before considering a shared multi-tenant deployment.</p>
+            <p class="roadmap-detail">Today's repository access controls apply within a managed corpus. They are not a shared SaaS isolation model.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="roadmap-contact" aria-labelledby="roadmap-contact-h">
+        <div>
+          <span class="eyebrow">Shape the direction</span>
+          <h2 id="roadmap-contact-h">What would help your team?</h2>
+          <p>Bring a real codebase question to a demo. It helps us understand which improvements matter in practice.</p>
+        </div>
+        <a href="demo.html" class="btn btn-primary">Discuss your use case <span aria-hidden="true">→</span></a>
+      </section>
+    </main>
+
+    <footer class="footer"><span>© 2026 Pragmatic Coder Ltd</span><nav aria-label="Footer"><a href="/case-study.html">Production &amp; evaluation</a><a href="/roadmap.html">Roadmap</a><a href="/data-handling.html">Website data handling</a><a href="mailto:mitch@pragmaticcoder.com">Contact Mitch</a></nav></footer>
+  </div>
+</div>
+<script src="main.js" defer></script>
+</body>
+</html>
