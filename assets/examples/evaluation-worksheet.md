@@ -1,7 +1,17 @@
-# Engram evaluation worksheet
+# Engram pilot checklist
 
-Use this record for each change-impact, decision-history or onboarding task.
-This is a measurement template, not a statement of expected savings.
+This optional checklist was created for Engram pilots. It is a custom template,
+not an industry standard, certification or validated benchmark. It makes no
+claim about expected savings.
+
+Use it to compare a few real tasks with your normal tools and with Engram:
+record the time taken, check the answers and note what was missed. For example,
+ask which parts of a repository are affected by a proposed change, then have a
+maintainer review both answers against the source.
+
+Copy this record for each change-impact, decision-history or onboarding task.
+Adapt the tasks and success criteria to your team; the detailed measurements
+below are suggestions, not requirements.
 
 ## Scope and configuration
 

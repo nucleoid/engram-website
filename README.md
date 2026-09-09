@@ -17,7 +17,8 @@ Static HTML, CSS and JavaScript. No framework or build step. Production is hoste
 - `styles.css`: existing brand tokens and components; `refresh.css`: shared layouts for the refreshed pages.
 - `main.js`: mobile navigation and hash alignment. Content and navigation remain usable without JavaScript.
 - `assets/examples/catalog-evidence.json`: public, labelled MCP response snapshot and exact query arguments.
-- `assets/examples/evaluation-worksheet.md`: downloadable comparison template.
+- `assets/examples/engram-pilot-workbook.xlsx`: primary pilot download, with setup guidance, editable task comparisons and formulas.
+- `assets/examples/evaluation-worksheet.md`: optional plain-text checklist. These are custom Engram templates, not an industry standard or validated benchmark.
 
 ## Preview and deploy
 
@@ -37,7 +38,7 @@ The booking page is managed in Google Calendar for the Pragmatic Coder account. 
 
 Booking URL: https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ03YZjoSkRzZ6Zj6q9sd8sf4mQ4YmHULVEeQg6vgVUbmmpikif88qI9nzSRRGoLaab0dH2Jpx8I
 
-Schedule defaults: 30 minutes, Monday–Friday 09:00–17:00 in Pacific/Auckland, 24 hours minimum notice, 60 days maximum advance booking, 15-minute buffer, at most four bookings per day, Google Meet. The current Google plan checks the Pragmatic Coder primary calendar only; it does not check other accounts. Optional preparation fields ask for company, repository setup/count and AI tools/questions. No paid plan was added.
+Schedule defaults: 30 minutes, Monday–Friday 07:00–09:00 and 17:00–19:30 in Pacific/Auckland, 24 hours minimum notice, 60 days maximum advance booking, 15-minute buffer, at most four bookings per day, Google Meet. A recurring Busy event blocks Monday–Friday 09:00–17:00 in Pacific/Auckland on the Pragmatic Coder primary calendar, with no end date and no notifications. The current Google plan checks that calendar only; it does not check other accounts. Optional preparation fields ask for company, repository setup/count and AI tools/questions. No paid plan was added.
 
 The alternative form posts to `https://formsubmit.co/mitch@pragmaticcoder.com`, requests CAPTCHA verification, and returns to `/thanks.html`. The return page is not a delivery receipt. FormSubmit recipient activation and mailbox delivery must be verified operationally before a campaign. Routine website QA should not create a real enquiry or appointment.
 
