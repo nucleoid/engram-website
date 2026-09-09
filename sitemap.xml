@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://engram.pragmaticcoder.com/</loc></url>
-  <url><loc>https://engram.pragmaticcoder.com/platform.html</loc></url>
-  <url><loc>https://engram.pragmaticcoder.com/examples.html</loc></url>
-  <url><loc>https://engram.pragmaticcoder.com/deployment.html</loc></url>
-  <url><loc>https://engram.pragmaticcoder.com/case-study.html</loc></url>
-  <url><loc>https://engram.pragmaticcoder.com/roadmap.html</loc></url>
-  <url><loc>https://engram.pragmaticcoder.com/data-handling.html</loc></url>
+  <url><loc>https://engram.pragmaticcoder.com/platform</loc></url>
+  <url><loc>https://engram.pragmaticcoder.com/examples</loc></url>
+  <url><loc>https://engram.pragmaticcoder.com/deployment</loc></url>
+  <url><loc>https://engram.pragmaticcoder.com/case-study</loc></url>
+  <url><loc>https://engram.pragmaticcoder.com/roadmap</loc></url>
+  <url><loc>https://engram.pragmaticcoder.com/data-handling</loc></url>
 </urlset>
